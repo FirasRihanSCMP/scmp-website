@@ -176,8 +176,7 @@ app.post("/api/Login", async (req, res) => {
           const validPass = await bcrypt.compare(password, result[0].U_Hash);
 
           if (validPass) {
-            /* const token = jwt.sign({ id:result[0].id,admin:result[0].admin,loggedIn:true }, "scmp112021",{expiresIn:60*60}, (err,token)=> {
-   */   
+          
             if (!!result[0].admin) {
           
               res.send({ webmail: false, result: true }).status(201)

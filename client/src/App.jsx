@@ -54,8 +54,7 @@ export default function App(props) {
       <Route path="/Events/e2" element={<SeperateEvent title={"Site visit to a complex of four industrial buildings under construction that will concentrate on manufacturing food, water and cleaning supplies."} date={"23/11/2021"} img={["ev3-1.jpg","ev3-2.jpg"]} />} ></Route>
       <Route path="/Events/e3" element={<SeperateEvent title={"A site visit to a regular and instant coffee factory to be built in Nabatiyeh-Toul area; concrete works did start."} date={"23/11/2021"} img={["ev2-4.jpg","ev2-7.jpg"]}/>}  ></Route> 
       <Route path="/Events/e4" element={<SeperateEvent title={"A visit to Fomatex Mattress Factory in Sareen, Bekaa"} date={"17/12/2021"} text2={"We also inspected few vacant warehouses that belong to the same company for possible future collaboration."} img={["e4-1.jpg","e4-3.jpg"]}/>}  ></Route> 
-      <Route path="/Events/e5" element={<SeperateEvent title={"A visit to Assaf Mill in Al-Musayleh, South Lebaon."} date={"16/12/2021"} text2={"The aim of the visit was to check on the existing facilities and equipment, as well as possibility of collaboration."} img={["e5-1.jpg","e5-2.jpg"]}/>}  ></Route> 
-    */}   <Route path="/Events/:id" element={<SeperateEvent/>}/>
+       */}   <Route path="/Events/:id" element={<SeperateEvent/>}/>
   <Route  path="/Events"
         element={ <Events/>
             
