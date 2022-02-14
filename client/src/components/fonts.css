@@ -1,0 +1,36 @@
+@font-face {
+ 
+    src: url( "./fonts/Mont.otf"); 
+      font-family:"mont";
+}
+@import "bootstrap/dist/css/bootstrap.min.css";
+/* .show,  .collapsing{
+  background-color: black !important;
+  color: white;
+} */
+@font-face {
+  font-family:'simplicity' ;
+  src: url(fonts/simplicity.ttf);
+}
+@font-face {
+  src: url("fonts/LEMONMILK-Light.otf");
+  font-family: "lemon";
+}
+
+  @font-face {
+    src: url("fonts/LEMONMILK-Regular.otf");
+    font-family: "lemon2";
+  }
+  @font-face {
+    src: url("fonts/Almarai.ttf");
+    font-family: "Almarai";
+  }
+  @font-face {
+ 
+    src: url( "./fonts/BebasNeue-Regular.otf"); 
+      font-family:"bebas";
+}
+@font-face {
+  font-family: "coolvetica";
+  src: url("./fonts/coolvetica\ rg.ttf");
+}

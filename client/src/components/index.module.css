@@ -1,0 +1,13 @@
+.bodyWidth{
+    width:65%;
+    margin: auto;
+}
+body{
+    background: rgb(255, 255, 255);
+height: 100%;
+  }
+  @media(max-width:550px){
+      .bodyWidth{
+          width: 90%;
+      }
+  }

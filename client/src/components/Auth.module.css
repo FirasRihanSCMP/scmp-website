@@ -1,0 +1,26 @@
+.bodyWidth{
+    width: 45%;
+    margin: auto;
+  padding: 3%;
+  border: rgb(206 212 218) solid 1px;
+}
+.submitButton{
+    font-weight: 500;
+}
+.submitButton:hover{
+color: #fdc10a;
+
+background-color: white;
+}
+.authTitle{
+    width: 45%;
+    margin: auto;
+    margin-bottom: 1%;
+    margin-top: 5%;
+}
+@media (max-width:630px){
+   .bodyWidth, .authTitle{ width: 75%;
+}}
+@media (max-width:430px){
+    .bodyWidth, .authTitle{ width: 85%;
+ }}
