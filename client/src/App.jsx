@@ -35,7 +35,7 @@ export default function App(props) {
     <Routes>
 
     
-      {/* <Route path="/Resources" element={<Resources/>}></Route>  */}
+   
       <Route path="/InvFund" element={<InvFund/>}></Route>
       <Route path="/auth" element={<Admin/>}></Route>
       <Route path="/Research" element={<Research/>}></Route>
