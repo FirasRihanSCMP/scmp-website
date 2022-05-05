@@ -1,0 +1,16 @@
+@import url("./fonts.css");
+
+.root{
+    width :75%;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+@media (max-width:576px){
+   .root{ width: 95%;}
+}
+@media(max-width:770px){
+    .root{
+        margin-top: 10%;
+    }
+}

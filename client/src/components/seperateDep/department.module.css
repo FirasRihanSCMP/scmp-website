@@ -1,0 +1,34 @@
+@import url("../fonts.css");
+.width{
+    width: 65%;
+    margin: auto;
+
+}
+.depTitle{
+    font-family: 'lemon';
+    font-size: 3vw;
+    text-align: center;
+    margin-top: 3%;
+    margin-bottom: 2%;
+  }
+  @media (max-width: 1200px) {
+    .depTitle{font-size: 40px;}
+  }
+
+  @media (max-width: 900px) {
+
+    .depTitle{font-size: 4.3vw;}
+  }
+  @media (max-width:550px) {
+
+    .depTitle{
+      font-size:5.5vw ;
+      margin-top: 10%;
+      margin-bottom: 5%;
+    }
+  }
+  @media (max-width: 480px) {
+    .width{
+      width: 85%;}
+    .depTitle{font-size: 6vw;}
+  }

@@ -1,0 +1,75 @@
+@media (max-width: 767px) {
+ 
+    .departmentsTitle{font-size: 5vw!important;}
+} 
+.departmentsTitle{
+    font-family: 'lemon';
+    font-size: 4vw;
+    text-align: center;
+    margin-top: 65px;
+  } 
+
+
+.root{
+    display: flex;
+    flex-wrap: wrap;
+    width: 75%;
+    margin: auto !important;
+    
+}
+.card-img-top{
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}
+.cardsbody{
+    margin-bottom: 2%!important;
+}
+.Col{
+    margin: auto !important;
+    margin-bottom: 6%;
+   
+}
+@media(max-width:1470px){
+    .root{
+        width: 85%;
+    } 
+    .departmentsTitle{
+    
+        margin-top: 65px;
+      } 
+}
+@media(max-width:1285px){
+    .root{
+        width: 90%;
+    } 
+    .departmentsTitle{
+    
+        margin-top: 65px;
+      } 
+}
+@media (max-width: 550px) {
+    .root {
+     width: 90%;
+    }
+   
+}
+@media (max-width: 775px) {
+
+    .departmentsTitle{
+        margin-top: 65px;
+        font-size:5vw;
+      } 
+}
+@media (max-width: 575px) {
+.departmentsTitle{
+    font-size: 7vw!important;
+}
+}
+@media (max-width: 450px) {
+
+    .departmentsTitle{
+        margin-top: 80px;
+    }
+
+}

@@ -1,0 +1,68 @@
+@import url("./fonts.css");
+body, html {
+    height: 100%;
+  }
+  .topBanner{
+    position: relative; 
+  }
+  .BackgroundImg {
+   width: 100%;
+    height: 15vw;
+  
+  }
+  .topParg{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    text-align: center;
+    font-family: "lemon";
+    padding: 3rem 0rem;
+ /*  color: rgb(0, 0, 0);
+      background: linear-gradient(-45deg, #f38a6ab4, #e73c7eaf, #23a5d5a8, #23d5aba2);
+      background-size: 400% 400%;
+      animation: gradient 10s ease infinite; */
+      
+    }
+    
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+    
+  
+  
+  /* .firstLetter {
+    color: rgb(0, 0, 0);
+  } */
+  @media (max-width:1011px) {
+    .topParg{
+      font-size: x-large;
+    }
+  }
+  @media (max-width:817px) {
+    
+    .topParg{
+      font-size: 1.5rem;
+      padding: 1rem 2rem;
+    }
+  }
+  @media (max-width:510px) {
+    .topParg{
+      padding: 1rem 1rem;
+      font-size: medium;
+    }
+  }
+  @media (max-width:334px) {
+    .topParg{
+      padding: 1rem 1rem;
+      font-size: small;
+    }
+  }

@@ -1,0 +1,62 @@
+.titleEng{
+    width: 73%;
+    margin: auto;
+}
+
+.title{
+    font-family: 'Lemon';
+    font-size:25px;
+ /*    text-align: justify; */
+}
+
+.spinnerdiv{
+
+ position: relative;
+ height: 50vh;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+.spinner{
+
+ 
+    }
+@media(max-width:1100px){
+    .title{
+        font-size: 20px;
+    }
+}
+@media(max-width:900px){
+    .title{
+        font-size: 16px;
+    }
+}
+@media(max-width:600px){
+    .title{
+        font-size: 15px;
+        text-align: start;
+    }
+}
+@media(max-width:576px){
+    .titleEng{
+   width: 95%;
+    }
+        .title{
+        font-size:15px;
+    }
+}
+@media(max-width:510px){
+    
+        .title{
+        font-size:16px;
+    }
+}
+@media(max-width:462px){
+    .date{
+        font-size: 16px;
+    }
+    .title{
+        
+    font-size:15px;
+}
+}

@@ -1,0 +1,12 @@
+@import url("../fonts.css");
+.BackgroundImg {
+    width: 100%;
+    height: 18vw;
+    margin-top: 2rem;
+    object-fit: cover;
+   }
+   @media (max-width:576px){
+       .BackgroundImg{
+           height: 30vw;
+       }
+   }

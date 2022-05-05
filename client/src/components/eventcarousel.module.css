@@ -1,0 +1,43 @@
+/* .carouselmain{
+    width: 100%;
+    height: 25vw;
+} */
+.img{
+    object-fit: cover;
+    width: 100%;
+    height: 25vw;
+}
+.bodyWidth{
+    width:65.5%;
+    margin: auto;
+    margin-top: 3%;
+}
+body{
+    background: rgb(255, 255, 255);
+  }
+  @media(max-width:550px){
+      .bodyWidth{
+          width: 90%;
+      }
+  }
+  @media (max-width:890px){
+
+    .img{
+        height: 30vw;
+    }
+  }
+@media (max-width:576px){
+  
+    .img{
+        object-fit: cover;
+        width: 100%;
+        height: 35vw;
+    }
+    
+}
+@media (max-width:450px){
+
+    .img{
+        height: 45vw;
+    }
+  }

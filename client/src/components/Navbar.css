@@ -1,0 +1,82 @@
+@import url("./fonts.css");
+ .topNavbar{
+  
+ 
+  z-index: 5;
+  width: 100%;
+}
+
+.navlink:hover {
+  color: #ffc41d !important;
+
+}
+.SCMP1:hover{color: #dadada!important;
+}
+.SCMP1{
+    color: #ffc41d !important;
+    vertical-align: middle;
+   /*  text-decoration: none!important */;
+    
+}
+
+/* .SCMP1:focus{color: #ffc41d;} */
+.navlink{
+ color:  #d5d5d5!important;
+  font-size: 1rem !important;
+  font-family: "lemon";
+}
+.SCMP1 {
+  font-family: "lemon";
+  font-size: x-large !important;
+  
+}
+.navbar {
+  box-shadow: 1px 1px #00000021;
+  flex-basis: auto;
+/*   background: #e7e7e7; */
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+@media (min-width: 900px) {
+  .container,
+  .container-md,
+  .container-sm {
+    max-width: 100% !important;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media (min-width: 500px) {
+  .container,
+  .container-md,
+  .container-sm {
+    max-width: 720px;
+  }
+}
+.nav-link {
+
+
+
+}
+
+.search-btn {
+  background-color: #ffffff;
+  border: 0;
+}
+.SCMP {
+  font-size: 35px;
+}
+/* .logo {
+  position: relative;
+  bottom: 8px;
+} */
+/* @media (max-width: 576px){
+    .SCMP{
+        display: none;
+    }
+} */
+.isSelected{
+  color: red;
+}
