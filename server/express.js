@@ -40,7 +40,7 @@ const storage = multer.diskStorage({
   },
   filename: (req, files, cb) => {
 
-    cb(null, files.originalname)
+    cb(null, Date().toISOString().replace(/:/g, '-'))
 
   }
 })
@@ -152,7 +152,7 @@ app.post("/api/SeperateEvent", async (req, res, err) => {
 
 
 var fileUpload = multer({ storage })
-const multipleUpload = fileUpload.fields([{ name: 'file', maxCount: 1 }, { name: 'file2', maxCount: 15 }])
+const multipleUpload = fileUpload.fields([{ name: 'file', maxCount: 1 }, { name: 'file2', maxCount: 30 }])
 
 app.post("/api/EventUpload", multipleUpload, async (req, res, err) => {
   console.log("hello there")
