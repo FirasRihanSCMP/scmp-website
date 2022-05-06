@@ -155,6 +155,7 @@ var fileUpload = multer({ storage })
 const multipleUpload = fileUpload.fields([{ name: 'file', maxCount: 1 }, { name: 'file2', maxCount: 15 }])
 
 app.post("/api/EventUpload", multipleUpload, async (req, res, err) => {
+  console.log("hello there")
   if (!!req.files) {
 
     try {
