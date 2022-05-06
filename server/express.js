@@ -74,7 +74,7 @@ app.use(express.static(path.resolve(__dirname, '../client', 'build')))
 app.get("/api/Events", async (req, res) => {
   try {
    
-    const sqlFetch = "SELECT * FROM events ORDER BY 'EID' ASC";
+    const sqlFetch = "SELECT * FROM events ORDER BY 'EID' DESC";
     await db.query(sqlFetch, async (err, result) => {
       console.log(result)
       return res.send(result);
