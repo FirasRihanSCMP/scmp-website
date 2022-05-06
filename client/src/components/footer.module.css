@@ -1,17 +1,26 @@
 @import url("./fonts.css");
 .rootFooter p{    margin-bottom: 0;
-  
+  font-family: 'gothic';
+ 
 color: rgb(223, 223, 223);}
+@media(max-width:885px){
+.footerCols{
+    font-size: 15px;}
+}
 .yellowP{
     color: #ffc41d!important;
 }   
 .copyrights{
 color: white;
 text-align: center;
+font-family: 'gothic';
 margin-top: 2%;
 } 
-.socialmedia{
-    width:auto;
+.socialMedia{
+    width:40px;
+}
+.socialMedia:hover{
+    filter: drop-shadow(0px 0px 3px rgb(128, 2, 2));
 }
 .firstCol{
    /*  display: flex;
@@ -39,8 +48,8 @@ margin-top: 2%;
 .LinksFooter{
     text-decoration: none;
     color: rgb(223, 223, 223);
+    font-family: 'gothic';
 
-    font-size: 16px;
     font-weight: 400;
     padding-bottom: 6%;
     display: flex;

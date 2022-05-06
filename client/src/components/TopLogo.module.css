@@ -34,19 +34,19 @@
 .logo{
     margin: 1rem;
     margin-left: 0;
-    width: 12vw;
+    width: 10vw;
   }
   
 .titleEng{
  font-family: "bebas";
  justify-content: center;
- font-size:2.2vw;
+ font-size:2vw;
 }
 .titleArb{
   font-family: "Almarai";
   justify-content: center;
   margin-bottom: 2.5rem;
-  font-size: 3.2vw;
+  font-size: 3vw;
 }
 
 

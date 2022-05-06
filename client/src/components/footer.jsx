@@ -57,6 +57,8 @@ export default function Footer() {
               <p>Phone: +961 1 822041</p> 
               <p>Mail : info@scmp-lb.com</p>
               <p>IT Support : IT.support@scmp-lb.com</p>
+             <a href="https://www.facebook.com/Scientific-Center-for-Manufacturing-and-Production-113151194718644/"><p> <img className={stylesFooter.socialMedia} src="../Icons/icons8-facebook.svg" alt="" /></p></a> 
+             
            {/*    <p>
                 Icons by 
                 <a className={stylesFooter.yellowP} href="https://icons8.com">

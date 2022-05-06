@@ -34,3 +34,7 @@
   font-family: "coolvetica";
   src: url("./fonts/coolvetica\ rg.ttf");
 }
+@font-face {
+  font-family: "gothic";
+  src: url("./fonts/GOTHIC.TTF");
+}

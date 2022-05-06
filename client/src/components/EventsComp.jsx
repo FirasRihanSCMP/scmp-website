@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Carousel } from "react-bootstrap";
-import stylesEvents from "./events.module.css";
+/* import stylesEvents from "./events.module.css"; */
 import stylesEvent from "./eventcarousel.module.css"
 
 export default function EventsComp(props) {
@@ -12,21 +12,11 @@ export default function EventsComp(props) {
 
 
   return (
-    <div className={stylesEvents.root}>
+    <div className={stylesEvent.root}>
 
 
-{/* <Carousel fade={false} indicators={false}>
-         {props.img.map((val)=>{return <Carousel.Item interval={2000} key={val} className={stylesEvent.carouselmain} >
-<img
-  className={`d-block w-100 ${stylesEvent.img}`} 
-  src={"../../imgs/events/"+val}
-  alt="First slide"
-/>
 
-</Carousel.Item> })} 
-
-</Carousel>  */}
-<Carousel fade={false} indicators={false}>
+<Carousel fade={false} indicators={false} className={stylesEvent.carouselImages}>
         {props.img ? JSON.parse(props.img).map((val) => {
           return <Carousel.Item interval={2000} key={val} className={stylesEvent.carouselmain} >
             <img

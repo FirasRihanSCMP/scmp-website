@@ -10,65 +10,73 @@ import { css } from "@emotion/react";
 
 import Spinner from "../ClipLoader/Spinner";
 import { TabTitle } from "../../actions/GeneralFunctions";
+import { Col, Row } from "react-bootstrap";
 export default function SeperateEvent(props) {
   const [Event, setEvent] = useState([]);
-  const [Loaded,setLoaded]=useState(false)
+  const [Loaded, setLoaded] = useState(false)
   const [errorFetchedChecker, seterrorFetchedChecker] = useState(false);
   let { id } = useParams();
- 
-   useEffect(() => {
-    async function fetchData(){
-    await axios
-      .post("https://www.scmp-lb.com/api/SeperateEvent", { EID: id })
-      .then((response) => {
-  
-    if(response.data==="not found"){
-      setLoaded(false)
-       
-     
-      }
-    else if(response.data.length>0){
-      TabTitle(`${props.title||response.data[0].ETitle}`)
-      setLoaded(true)
-      setEvent(response.data)
-     
-      
-    }})
-    .catch(err=>{
-     
-      seterrorFetchedChecker((c) => !c);
-    });
-  }
-  if(errorFetchedChecker){
-    setTimeout(()=>{
-        fetchData();
-    },[3000])// 3 seconds
-} else {
-    fetchData();
-} }, [errorFetchedChecker]); 
-  return (
-    <div>
 
-   {Loaded? (Event.length>0 ? <div> <div className={Topstyles.titleEng}>
+  useEffect(() => {
+    async function fetchData() {
+      await axios
+        .post("https://www.scmp-lb.com/api/SeperateEvent", { EID: id })
+        .then((response) => {
+
+          if (response.data === "not found") {
+            setLoaded(false)
+
+
+          }
+          else if (response.data.length > 0) {
+            TabTitle(`${props.title || response.data[0].ETitle}`)
+            setLoaded(true)
+            setEvent(response.data)
+
+
+          }
+        })
+        .catch(err => {
+
+          seterrorFetchedChecker((c) => !c);
+        });
+    }
+    if (errorFetchedChecker) {
+      setTimeout(() => {
+        fetchData();
+      }, [3000])// 3 seconds
+    } else {
+      fetchData();
+    }
+  }, [errorFetchedChecker]);
+  return (
+    <div className={Topstyles.root}>
+
+      {Loaded ? (Event.length > 0 ? <div> <div className={Topstyles.titleEng}>
+        <p className={Topstyles.date}>{props.date || Event[0].EDate}</p>
+        <h1 className={Topstyles.title}>{props.title || Event[0].ETitle}</h1>
+        <Row> <Col xs={12} md={6}>{props.link || Event[0].ELink ? (<a href={`${props.link || Event[0].ELink || ""}`}> <EventsComp img={props.img || Event[0].EPhotos} /> </a>) : <EventsComp img={props.img || Event[0].EPhotos} />}
+</Col>
+<Col xs={12} md={6}><div className={Topstyles.text}><p>{props.text2 || Event[0].EBrief}</p>
+<p>{props.paragraph || Event[0].EParagraph||""}</p></div></Col>
+</Row>
         
-        <p className={Topstyles.date}>Date: {props.date||Event[0].EDate}</p>
-        <h1 className={Topstyles.title}>{props.title||Event[0].ETitle}</h1>
-        <p>{props.text2||Event[0].EBrief}</p>
+        
       </div>
-      {props.link || Event[0].ELink ? (<a href={`${props.link||Event[0].ELink||""}`}><EventsComp  img={props.img||Event[0].EPhotos} /> </a> ): <EventsComp  img={props.img||Event[0].EPhotos} />}
-</div>:  <NotFound/>) :<Spinner/> }
-    
-     
+       
+      </div> : <NotFound />) : <Spinner />}
+
+
     </div>
-/*     <div>
-    <h1>{Event.ETitle}</h1>
-    <div className={Topstyles.titleEng}>
-      {" "}
-      <p className={Topstyles.date}>Date: {props.date}</p>
-      <h1 className={Topstyles.title}>{props.title}</h1>
-      <p>{props.text2}</p>
-    </div>
-    <EventsComp img={props.img} />
-  </div> */
+    /*     <div>
+        <h1>{Event.ETitle}</h1>
+        <div className={Topstyles.titleEng}>
+          {" "}
+          <p className={Topstyles.date}>Date: {props.date}</p>
+          <h1 className={Topstyles.title}>{props.title}</h1>
+          <p>{props.text2}</p>
+        </div>
+        <EventsComp img={props.img} />
+      </div> */
   );
 }

@@ -46,7 +46,7 @@ TabTitle('Scientific Center For Manufacturing And Production')
 
     return (
         <div>
-{Loaded ?<CarouselScmp img={Imgs} style={25}/> 
+{Loaded ?<CarouselScmp img={Imgs} style={24}/> 
 :<div><Spinner/></div>}
           
                      <Paragraph img={"./imgs/planner.webp"} topTitle={"Our Mission"} text={"SCMP works on studying needs as inputs, prioritizing them, and working within a specific time plan to produce studies and spatial planning which includes three items: standing situation, desired situation, and the proposed roadmap. Three types of outputs emerge from this spatial planning. First, the feasibility studies that turn into productive projects based on the partnership of three parties (the local capital, the center that provides all the required scientific services, the source of technology). Second, investment priorities according to which SCMP will enlarge existing small businesses. Last, new innovative ideas that are being used in a scientific, technical and financial greenhouse towards emerging companies."} />

@@ -1,11 +1,29 @@
-/* .carouselmain{
+
+
+.root{
+    width :100%;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+@media (max-width:576px){
+   .root{ width: 95%;}
+}
+@media(max-width:770px){
+    .root{
+        margin-top: 10%;
+    }
+}
+.carouselImages{
     width: 100%;
-    height: 25vw;
-} */
+    margin: auto;
+    
+}
 .img{
     object-fit: cover;
-    width: 100%;
-    height: 25vw;
+   /*  width: 100%; */
+    height: 28vw;
+ /*    width: 80% !important; */
 }
 .bodyWidth{
     width:65.5%;
@@ -23,7 +41,7 @@ body{
   @media (max-width:890px){
 
     .img{
-        height: 30vw;
+        height: 40vw;
     }
   }
 @media (max-width:576px){
@@ -31,7 +49,7 @@ body{
     .img{
         object-fit: cover;
         width: 100%;
-        height: 35vw;
+        height: 45vw;
     }
     
 }
