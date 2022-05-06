@@ -74,7 +74,7 @@ app.use(express.static(path.resolve(__dirname, '../client', 'build')))
 app.get("/api/Events", async (req, res) => {
   try {
    
-    const sqlFetch = "SELECT * FROM events ORDER BY 'EID'";
+    const sqlFetch = "SELECT * FROM events ORDER BY 'EID' DESC";
     await db.query(sqlFetch, async (err, result) => {
       return res.send(result);
     });
@@ -167,8 +167,8 @@ app.post("/api/EventUpload", multipleUpload, async (req, res, err) => {
 
       const coverphoto = req.files.file[0].originalname.toString()
       console.log("reached ")
-      const UserInsert = "INSERT INTO `events` ( `ETitle`, `EBrief`, `EParagraph`, `EPhotos`, `ECover`, `EDate`) VALUES (?,?,?,?,?,?)";
-      await db.query(UserInsert, [title, brief, paragraph, JSON.stringify(photoArray), coverphoto, date], (err, result) => {
+      const UserInsert = "INSERT INTO `events` ( `ETitle`, `EBrief`, `EParagraph`, `EPhotos`, `ECover`, `EDate`,'ELink') VALUES (?,?,?,?,?,?,?)";
+      await db.query(UserInsert, [title, brief, paragraph, JSON.stringify(photoArray), coverphoto, date,], (err, result) => {
         if (err) { console.log(err); }
         else { res.sendStatus(201); }
       });
