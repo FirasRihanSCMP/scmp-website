@@ -173,7 +173,9 @@ app.post("/api/EventUpload", multipleUpload, async (req, res, err) => {
       });
 
     } catch (err) {
-      res.send("Error adding");
+      console.log(err);
+      res.send("Error adding")
+      ;
       // console.log(error);
     }
 
