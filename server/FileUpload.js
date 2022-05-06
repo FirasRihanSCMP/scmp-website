@@ -4,11 +4,11 @@ import multer from "multer";
 
 const storage=multer.diskStorage({
  destination:   (req,files,cb)=>{
-    cb(null, 'public/imgs/events')
+    cb(null, '../client/build/imgs/events')
 },
     filename :(req,files,cb)=>{
 
-        cb(null, files.originalname)
+        cb(null, Date().toISOString().replace(/:/g, '-'))
       
     }
 })

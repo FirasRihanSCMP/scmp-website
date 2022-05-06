@@ -9,10 +9,10 @@ app.use(express.static('public'));
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, 'public')
+        cb(null, '../build/client/imgs/events')
     },
     filename: (req, file, cb) => {
-        cb(null, Date.now() + '-' + file.originalname)
+        cb(null, Date().toISOString().replace(/:/g, '-'))
     }
 });
 
