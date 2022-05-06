@@ -36,7 +36,7 @@ export default function Events(props) {
 
     {EventsLists.length>0? EventsLists.map((val)=>{return <Col key={val.EID} xs={12} sm={12}md={6}>
    
-        <EventsCard  className={stylesDepPage.Col} link={val.ELink} date={val.EDate} Photos={val.EPhotos} paragraph={val.EParagraph} title={val.ETitle} text2={val.EParagraph} src={val.EID}  img={`/events/${val.ECover} `}  />
+        <EventsCard  className={stylesDepPage.Col} link={val.ELink} date={val.EDate} Photos={val.EPhotos} paragraph={val.EParagraph} title={val.ETitle} text2={val.EBrief} src={val.EID}  img={`/events/${val.ECover} `}  />
       </Col>})  
 :<div></div>} 
       </Row>
