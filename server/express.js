@@ -76,6 +76,7 @@ app.get("/api/Events", async (req, res) => {
    
     const sqlFetch = "SELECT * FROM events ORDER BY 'EID' ASC";
     await db.query(sqlFetch, async (err, result) => {
+      console.log(result)
       return res.send(result);
     });
   } catch (error) {
