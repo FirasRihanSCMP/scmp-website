@@ -57,9 +57,9 @@ if (window.confirm("Press a button!")) {await axios.post("https://www.scmp-lb.co
       .then((e) => {
      
          toast.success("Upload success");
-    setTimeout(() => {
+  /*   setTimeout(() => {
       navigate("/Events")
-    }, 3000);
+    }, 3000); */
         
        
       })
