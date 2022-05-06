@@ -55,7 +55,7 @@ export default function SeperateEvent(props) {
         <h1 className={Topstyles.title}>{props.title||Event[0].ETitle}</h1>
         <p>{props.text2||Event[0].EBrief}</p>
       </div>
-      {props.link || Event[0].ELink ? (<a href={`http://${props.link||Event[0].ELink||""}`}><EventsComp  img={props.img||Event[0].EPhotos} /> </a> ): <EventsComp  img={props.img||Event[0].EPhotos} />}
+      {props.link || Event[0].ELink ? (<a href={`${props.link||Event[0].ELink||""}`}><EventsComp  img={props.img||Event[0].EPhotos} /> </a> ): <EventsComp  img={props.img||Event[0].EPhotos} />}
 </div>:  <NotFound/>) :<Spinner/> }
     
      
