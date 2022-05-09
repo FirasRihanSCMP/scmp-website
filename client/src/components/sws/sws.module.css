@@ -61,6 +61,8 @@ li{
     color: #f7b80a;
 }
 .Application{
+    color:#898989;
+    text-decoration-color: #898989;
     font-style: italic;
     font-weight: bold;
     text-align: center;

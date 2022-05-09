@@ -56,7 +56,7 @@ export default function Sws() {
       {/* {Loaded? */}
       <p className={styleSws.Application}> To Apply for this Event, Please Fill the Following  <a href="https://forms.gle/6cabDREDmKrLm4hm7" className={styleSws.formLink} >Application</a> before midnight of <span className={styleSws.oldDate}>6-May-2022</span></p>
    
-      <h2 className={styleSws.newDate}>In response to some requests, the deadline of ideas submission has been extended!</h2>
+      <h2 className={styleSws.newDate}>In response to some requests, the deadline of ideas submission has been extended until midnight of 15-May-2022!</h2>
 <br/>
       <h1 className={styleSws.title}>Why SCMP's Startup Weekend?</h1>
       <p className={styleSws.firstParagraph}>The “Startup Weekend” aims to attract creative ideas and innovations of young people in order to achieve their ambitions and goals.
