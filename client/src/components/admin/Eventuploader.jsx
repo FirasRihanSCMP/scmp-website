@@ -14,6 +14,7 @@ export default function Uploader() {
 const [brief, setBrief] = useState('');
 const [title, setTitle] = useState('')
 const [paragraph, setParagraph] = useState('')
+const [ELink, setELink] = useState('')
 let navigate=useNavigate()
 var FinalDate=""
   const dateHandler = async(date) => {
@@ -51,6 +52,7 @@ var FinalDate=""
 data.append('title',title)
 data.append('brief',brief)
 data.append('paragraph',paragraph)
+data.append('ELink',ELink)
 data.append('date',date)
 
 if (window.confirm("Press a button!")) {await axios.post("https://www.scmp-lb.com/api/EventUpload", data)
