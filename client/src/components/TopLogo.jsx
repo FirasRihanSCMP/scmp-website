@@ -12,7 +12,7 @@ export default function TopLogo() {
             src="/ScmpLogo1.png"
             
             className={`d-inline-block ${Topstyles.logo } `}
-            alt="React Bootstrap logo"
+            alt=""
           />
         </Col>
         <Col className={Topstyles.col}  sm={'auto'} > 
