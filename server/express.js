@@ -168,7 +168,7 @@ app.post("/api/EventUpload", multipleUpload, async (req, res, err) => {
 
       const coverphoto = req.files.file[0].originalname.toString()
       console.log("reached ")
-      const UserInsert = "INSERT INTO `events` ( `ETitle`, `EBrief`, `EParagraph`, `EPhotos`, `ECover`, `EDate`,'ELink') VALUES (?,?,?,?,?,?,?)";
+      const UserInsert = "INSERT INTO `events` ( `ETitle`, `EBrief`, `EParagraph`, `EPhotos`, `ECover`, `EDate`, `ELink`) VALUES (?,?,?,?,?,?,?)";
       await db.query(UserInsert, [title, brief, paragraph, JSON.stringify(photoArray), coverphoto, date,], (err, result) => {
         if (err) { console.log(err); }
         else { res.sendStatus(201); }
