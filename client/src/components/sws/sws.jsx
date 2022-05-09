@@ -2,7 +2,7 @@ import axios from 'axios';
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { Button} from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import { TabTitle } from '../../actions/GeneralFunctions';
 import CarouselScmp from '../../CarouselScmp/CarouselScmp';
 
@@ -33,7 +33,7 @@ export default function Sws() {
           }
         })
         .catch(err => {
-         /*  console.log(err) */
+          /*  console.log(err) */
           seterrorFetchedChecker((c) => !c);
         });
     }
@@ -46,53 +46,55 @@ export default function Sws() {
     }
   }, [errorFetchedChecker]);
 
-  return <div> {Loaded ? <div>  
-  
-    <div className={styleSws.swsCarousel}><CarouselScmp style={20} img={Imgs}/></div>
-    <h2 className={styleSws.header}>The Scientific Center for Manufacturing and Production announces the organization of its first Startup Weekend Support! <br/> SCMP-SWS2022</h2>
+  return <div> {Loaded ? <div>
+
+    <div className={styleSws.swsCarousel}><CarouselScmp style={20} img={Imgs} /></div>
+    <h2 className={styleSws.header}>The Scientific Center for Manufacturing and Production announces the organization of its first Startup Weekend Support! <br /> SCMP-SWS2022</h2>
 
 
     <div className={styleSws.root}>
       {/* {Loaded? */}
-      <p className={styleSws.Application}> To Apply for this Event, Please Fill the Following  <a href="https://forms.gle/6cabDREDmKrLm4hm7" className={styleSws.formLink} >Application</a> before midnight of 6-May-2022</p>
-      <br/>
+      <p className={styleSws.Application}> To Apply for this Event, Please Fill the Following  <a href="https://forms.gle/6cabDREDmKrLm4hm7" className={styleSws.formLink} >Application</a> before midnight of <span className={styleSws.oldDate}>6-May-2022</span></p>
+   
+      <h2 className={styleSws.newDate}>In response to some requests, the deadline of ideas submission has been extended!</h2>
+<br/>
       <h1 className={styleSws.title}>Why SCMP's Startup Weekend?</h1>
       <p className={styleSws.firstParagraph}>The “Startup Weekend” aims to attract creative ideas and innovations of young people in order to achieve their ambitions and goals.
 
       </p>
       <div className={styleSws.firstParagraph}>Submitted applications will go through an initial screening formed by experts
-      in different fields. Next, the participants of the selected proposals will have to present their ideas in front of moderators and judges.
-      <br/><br/>
-       
+        in different fields. Next, the participants of the selected proposals will have to present their ideas in front of moderators and judges.
+        <br /><br />
+
         In the final stage, SCMP will provide the accepted proposals with the necessary:
-        <br/>
-       <br/>
+        <br />
+        <br />
         <ul className={styleSws.list}>
-        <li>Financial</li>
-        <li>Technical</li>
-        <li>Legal</li>
-        <li>Logistical</li>
-        </ul>  <br/> Assistance to launch new Startups. <br /> <br />
+          <li>Financial</li>
+          <li>Technical</li>
+          <li>Legal</li>
+          <li>Logistical</li>
+        </ul>  <br /> Assistance to launch new Startups. <br /> <br />
         Another objective of this Weekend is benefiting from technology to stimulate innovation, to market ideas, and to promote cooperation between different stake holders. {/* responsible for the success of the proposals. */}
         The competitive participation is open to ideas with technological background in the following fields:
-       <br/>
-       <br/>
-       <div className="fields">
-       <ul  >
-        <li>Health</li>
-         <li>Environment</li>  
-         <li>Educational Platforms</li>
-         <li>Software Applications</li>  
-         <li>Agro-Food Development</li>
-         <li>Energy, Water and Natural Resources</li>
-          <li>
-          E-Business, E-Commerce, Entrepreneurship
-          </li>
-          <li>Electronic, Electrical, and Mechanical Projects</li>
-        
-        </ul>
+        <br />
+        <br />
+        <div className="fields">
+          <ul  >
+            <li>Health</li>
+            <li>Environment</li>
+            <li>Educational Platforms</li>
+            <li>Software Applications</li>
+            <li>Agro-Food Development</li>
+            <li>Energy, Water and Natural Resources</li>
+            <li>
+              E-Business, E-Commerce, Entrepreneurship
+            </li>
+            <li>Electronic, Electrical, and Mechanical Projects</li>
 
-       </div>
+          </ul>
+
+        </div>
       </div>
       <br />
       <h1 className={styleSws.title}>Confidentiality</h1>
@@ -110,10 +112,10 @@ export default function Sws() {
 
 
       </div>
-     <div className={styleSws.applyBtnDiv}> <Button onClick={()=>{window.location.href="https://forms.gle/6cabDREDmKrLm4hm7"}} className={styleSws.applyBtn}  variant='warning' >Apply Here!</Button></div> 
-    </div></div>:<div><Spinner/></div>} </div> 
-        
-      
+      <div className={styleSws.applyBtnDiv}> <Button onClick={() => { window.location.href = "https://forms.gle/6cabDREDmKrLm4hm7" }} className={styleSws.applyBtn} variant='warning' >Apply Here!</Button></div>
+    </div></div> : <div><Spinner /></div>} </div>
+
+
 
 
 }
