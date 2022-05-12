@@ -55,14 +55,7 @@ app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 app.use(express.json());
 
 
-/* app.use(session({
 
-  secret: "tanjarame2leyesakhane2022",
-
-  resave: false,
-  saveUninitialized: false,
-  
-})) */
 
 
 app.use(express.static(path.resolve(__dirname, '../client', 'build')))
