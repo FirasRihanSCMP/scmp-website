@@ -23,7 +23,7 @@
     height: 80%!important;
 }
 .swsCarousel{
-    width: 80%!important;
+    width: 90%!important;
    
     margin: auto;
 }
@@ -122,8 +122,18 @@ li{
     .root{
         width: 80vw;
     }
+    .swsCarousel{
+        width: 70%!important;
+       
+        margin: auto;
+    }
 }
 @media(max-width:960px){
+    .swsCarousel{
+        width: 70%!important;
+       
+        margin: auto;
+    }
     .root{
         width: 90vw;
         margin: auto;

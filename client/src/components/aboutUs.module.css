@@ -20,8 +20,7 @@
 }
 .firstRow{
     margin: auto!important; 
-
-    width: 65.5%;
+width: 98%;
     position: relative;
 }
 .imgCol{
@@ -107,8 +106,15 @@
           font-size: 3vw;
       } */
 } 
-@media (max-width: 1135px){
-  /*   .text{
+@media (max-width: 1199px){
+    .firstRow{
+    width: 100%;
+    }
+    .root1{
+        margin-bottom: 2%;
+        margin-top:2%
+    }
+    /*   .text{
    
    
     
@@ -120,9 +126,7 @@
       } */
 } 
 @media (max-width:992px){
-    .firstRow{
-        width:65.5%
-    }
+  
     .root{
         margin-top: 18%;
     }
@@ -133,9 +137,7 @@
     
 }
 @media (max-width: 550px){
-    .firstRow{
-        width: 90%;
-    }
+   
   /*   .text{
         font-size: 15px!important;
       } */

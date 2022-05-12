@@ -6,11 +6,10 @@ export default function paragraph(props) {
   return (
     <div>
      <h1 className={stylesDepartment.depTitle}>{props.topTitle}</h1>
-      <Row className={[stylesParagraph.pardiv, stylesParagraph.bodyWidth]}>
+      <Row className={[stylesParagraph.pardiv]}>
       
-        <Col className={stylesParagraph.parCol} xs={12} sm={12} md={12} lg={12} xl={{span:6 ,offset:0, order:props.order}} >
-       
-           {/*  <h2 className={ stylesParagraph.title}>{props.title}</h2> */}
+        <Col className={stylesParagraph.parCol} xs={12} sm={12} md={12} lg={12} xl={{span:6 ,offset:0}} >
+
           <div className={stylesParagraph.divPar}><p className={stylesParagraph.paragraph}>{props.text}</p> </div> 
        
         </Col>

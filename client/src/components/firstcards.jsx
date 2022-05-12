@@ -13,7 +13,7 @@ export default function Firstcards(props) {
   return (
     <div className={stylesFirst.bodyWidth}>
      {/*  <p className="departmentsTitle">Our Directorates</p> */}
-      <Row className={`g-4 ${stylesFirst.cardsMiddleContainer}`}>
+      <Row className={` ${stylesFirst.cardsMiddleContainer}`}>
         <Col className={stylesFirst.cardCol} xs={12} sm={12} md={6} lg={6} xxl={4}>
           <DepartmentCard title={props.title[0]} text={props.text[0]} text2={props.text[0]} src={props.src[0]} img={props.img[0]} />
         </Col>

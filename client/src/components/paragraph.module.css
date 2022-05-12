@@ -33,7 +33,7 @@ padding: 1%;
   } */
 .imgCol {
   height: 32vw;
-
+  margin: auto !important;
   padding: 0;
   width: 47%!important;
   padding: 0%!important;
@@ -50,6 +50,7 @@ padding: 1%;
   text-align: center;
 }
 .parCol {
+  margin: auto !important;
   color: rgb(0, 0, 0);
   background: linear-gradient(-45deg, #df8a71, #f6cfaa, #f6cfaa, #fb9a9acc);
   background-size: 400% 400%;

@@ -16,7 +16,7 @@
   object-fit: cover;
 }
 .buttonRow{
-  width: max-content;
+  margin-top: 4%!important;
   margin: auto;
 }
 .departmentsTitle{
@@ -26,7 +26,7 @@
 }
 .cardCol{
   padding: 1%;
-  margin-top: 2%;
+  margin-top: 2% ;
 }
 .cardImage{
   width: 100%;
@@ -51,7 +51,7 @@
 .buttonCol{    text-align: center;
   margin-top: 20%;}
 .bodyWidth {
-  width: 67% !important;
+  width: 98% !important;
   margin: auto;
 }
 body {
@@ -67,6 +67,12 @@ body {
  .card-title{
    font-size:18px;
  }
+}
+@media(max-width:1299px){
+  .bodyWidth {
+    width: 100% !important;
+   
+  }
 }
 @media(max-width:1245px){
   .card-title{
@@ -126,7 +132,7 @@ body {
 }
 @media (max-width: 550px) {
   .bodyWidth {
-    width: 92%!important;
+ 
   }
 
   .cardImage{

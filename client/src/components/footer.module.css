@@ -3,6 +3,42 @@
   font-family: 'gothic';
  
 color: rgb(223, 223, 223);}
+
+
+#facebook{
+    margin-right: 10px;
+    fill: #ffc41d;
+    width: 36px;
+    height: 36px;
+}
+#facebook:hover{
+    
+    fill: #2c62cf ;
+}
+#instagram{
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+    fill: #ffc41d;
+}
+#instagram:hover{
+fill: url(#InstagramGradient);
+   width:40px;
+   height:40px;
+}
+#youtube{
+    margin-right: 10px;
+    fill: #ffc41d;
+    width: 40px;
+    height: 40px;
+}
+#youtube:hover{
+    fill: #FF0000;
+}
+.socialMedia{
+    text-decoration: none;
+}
+
 @media(max-width:885px){
 .footerCols{
     font-size: 15px;}
@@ -18,9 +54,11 @@ margin-top: 2%;
 } 
 .socialMedia{
     width:40px;
+margin-bottom: 2%;
 }
-.socialMedia:hover{
-    filter: drop-shadow(0px 0px 3px rgb(128, 2, 2));
+.socialMediaDiv{
+    margin-bottom: 5%;
+    margin-top: 5%;
 }
 .firstCol{
    /*  display: flex;
@@ -61,11 +99,13 @@ margin-top: 2%;
 .col2{
     margin: auto;
     margin-top: 0;
+    margin: 0 auto auto;
+    width: fit-content;
 }
 .col3{
     margin: auto;
     margin-top: 0;
-    width: fit-content;
+    width: fit-content !important;
 
 }
 .scmpfooter{

@@ -48,11 +48,12 @@ export default function Sws() {
 
   return <div> {Loaded ? <div>
 
+
+    <div className={styleSws.root}>
+      
     <div className={styleSws.swsCarousel}><CarouselScmp style={20} img={Imgs} /></div>
     <h2 className={styleSws.header}>The Scientific Center for Manufacturing and Production announces the organization of its first Startup Weekend Support! <br /> SCMP-SWS2022</h2>
 
-
-    <div className={styleSws.root}>
       {/* {Loaded? */}
       <p className={styleSws.Application}> To Apply for this Event, Please Fill the Following  <a href="https://forms.gle/6cabDREDmKrLm4hm7" className={styleSws.formLink} >Application</a> before midnight of <span className={styleSws.oldDate}>6-May-2022</span></p>
    

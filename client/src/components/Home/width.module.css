@@ -1,0 +1,9 @@
+.root{
+    width: 70%;
+    margin: auto;
+}
+@media (max-width:550px) {
+    .root{
+        width: 90%;
+    }
+}
