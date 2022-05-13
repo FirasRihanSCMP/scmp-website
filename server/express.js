@@ -47,8 +47,8 @@ app.use(cors({
 }));
 
 app.use(cookieParser());
-app.use(bodyParser.urlencoded({extended: true , limit: "150mb"}));
-app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true , limit:'150mb'}));
+app.use(bodyParser.json({limit:'150mb'}));
 /* app.use(express.json()); */
 
 
