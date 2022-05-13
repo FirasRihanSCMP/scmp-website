@@ -15,7 +15,7 @@ export default function Events(props) {
  /*  const [startDate, setStartDate]=useState(new Date()); */
  TabTitle('Events - Scientific Center For Manufacturing And Production')
   useEffect(() => {
-  Axios.get("https://www.scmp-lb.com/api/Events").then((response)=>{
+  Axios.get("http://www.scmp-lb.com/api/Events").then((response)=>{
     setLoaded(true)
     setEventsList(response.data);
   

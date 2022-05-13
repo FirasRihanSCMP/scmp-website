@@ -44,7 +44,7 @@
     text-align: center;
 }
 .eventForm{
-    width: 50%;
+    width: fit-content !important;
     margin: auto;
 }
 @media (max-width:1200px){

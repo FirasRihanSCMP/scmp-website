@@ -1,7 +1,9 @@
 /* import bodyParser from "body-parser"; */
 const express = require('express')
 const path = require('path')
-
+const formidable= require('formidable')
+const bluebird = require('bluebird')
+const fs =bluebird.promisifyAll(require('fs'))
 const bodyParser = require('body-parser')
 const bcrypt = require('bcryptjs')
 const cors = require('cors')
@@ -9,21 +11,7 @@ const mysql = require('mysql')
 const cookieParser = require('cookie-parser')
 const multer = require('multer')
 const {createToken,validateToken}=require('./JWT')
-/* import express from "express";
-import mysql from "mysql";
-import bcrypt from "bcryptjs";
-import cors from "cors"; */
-/* import { multipleUpload } from "./FileUpload.js"; */
-/* import fs from 'fs'
-import path from "path"; */
-/* import Events from "../client/src/components/Events/Events"; */
-/* import jwt from "jsonwebtoken"; */
-/* import e from "express"; */
-/* import ReactDOMServer from "react-dom/server";
-import { StaticRouter } from "react-router-dom/server"; */
-/* import cookieParser from 'cookie-parser' */
-/* import index from '../client/public/index' */
-/* import multer from "multer"; */
+const { fstat } = require('fs')
 const upload = multer({ dest: '../client/build/imgs/events' })
 const app = express();
 const db = mysql.createPool({
@@ -34,6 +22,15 @@ const db = mysql.createPool({
   dateStrings: true,
   
 });
+/* const db = mysql.createPool({
+  host: "localhost",
+  user: "adminSCMP",
+  password: "db@SqlSCMP2021",
+  database: "sc34mpr_scmp",
+  dateStrings: true,
+  
+}); */
+
 const storage = multer.diskStorage({
   destination: (req, files, cb) => {
     cb(null, '../client/build/imgs/events')
@@ -50,9 +47,9 @@ app.use(cors({
 }));
 
 app.use(cookieParser());
-app.use(bodyParser.urlencoded({ limit: "50mb", parameterLimit: 100000, extended: true }));
-
-app.use(express.json());
+app.use(bodyParser.urlencoded({extended: true , limit: "150mb"}));
+app.use(bodyParser.json());
+/* app.use(express.json()); */
 
 
 
@@ -145,8 +142,13 @@ app.post("/api/SeperateEvent", async (req, res, err) => {
 
 
 
-var fileUpload = multer({ storage })
-const multipleUpload = fileUpload.fields([{ name: 'file', maxCount: 1 }, { name: 'file2', maxCount: 30 }])
+var fileUpload = multer({ storage:storage,
+limits:{fileSize:150*1024*1024}
+})
+const multipleUpload = fileUpload.fields([{ name: 'coverPhoto', maxCount: 1 }, { name: 'innerPhotos', maxCount: 30 }])
+
+
+
 
 app.post("/api/EventUpload", multipleUpload, async (req, res, err) => {
   console.log("hello there")
@@ -154,12 +156,16 @@ app.post("/api/EventUpload", multipleUpload, async (req, res, err) => {
 
     try {
       const { title, brief, paragraph, date,ELink } = req.body;
+      console.log(req.body)
       const photoArray = []
-      for (let i = 0; i < req.files.file2.length; i++) {
-        photoArray.push(req.files.file2[i].originalname)
+      for (let i = 0; i < req.files.innerPhotos.length; i++) {
+        photoArray.push(req.files.innerPhotos[i].originalname)
+        
       }
+      console.log(photoArray)
 
-      const coverphoto = req.files.file[0].originalname.toString()
+      const coverphoto = req.files.coverPhoto[0].originalname
+      console.log(coverphoto)
       console.log("reached ")
       const UserInsert = "INSERT INTO `events` ( `ETitle`, `EBrief`, `EParagraph`, `EPhotos`, `ECover`, `EDate`, `ELink`) VALUES (?,?,?,?,?,?,?)";
       await db.query(UserInsert, [title, brief, paragraph, JSON.stringify(photoArray), coverphoto, date,ELink], (err, result) => {
@@ -175,9 +181,49 @@ app.post("/api/EventUpload", multipleUpload, async (req, res, err) => {
     }
 
   }
+  else{
+    res.sendStatus(201)
+  }
 
 }
 )
+
+/* async function checkCreateUploadsFolder (uploadsFolder) {
+	try {
+		await fs.statAsync(uploadsFolder)
+	} catch (e) {
+   
+		if (e && e.code == 'ENOENT') {
+			console.log('The uploads folder doesn\'t exist, creating a new one...')
+			try {
+				await fs.mkdirAsync(uploadsFolder)
+			} catch (err) {
+				console.log('Error creating the uploads folder 1')
+				return false
+			}
+		} else {
+			console.log('Error creating the uploads folder 2')
+			return false
+		}
+	}
+	return true
+}
+ */
+
+
+
+
+/* console.log(req.files)
+form.on('fileBegin', function(name, file){
+  file.filepath= '../client/build/imgs/events'+ file.name
+})
+form.on('file', function (name,file){
+  console.log("Uploaded file"+file.name)
+}) */
+
+
+
+
 
 app.post("/api/Login", async (req, res) => {
   try {
@@ -187,7 +233,7 @@ app.post("/api/Login", async (req, res) => {
 
     const U_NameModified = username.toLowerCase().replace(/[&\/\\#,+()$~%'":*?<>{}]/g, "");
     const sqlFetch = "SELECT * FROM `users` WHERE `U_Name`=(?)";
-    await db.query(sqlFetch, [U_NameModified], async (err, result) => {
+    await db.query(sqlFetch, [U_NameModified], async (err, result) => { 
       if (err) {
        
         res.send({ result: "Network Error" }).status(501)

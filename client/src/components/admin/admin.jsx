@@ -4,7 +4,7 @@ import { Row, Col } from "react-bootstrap";
 import axios from "axios";
 import Uploader from "./Eventuploader";
 import { ToastContainer } from "react-toastify";
-
+import UploadEvent from "./UploadEvent";
 import 'react-toastify/dist/ReactToastify.css';
 import  { Route,Redirect, Navigate } from 'react-router-dom'
 import Auth from "../Auth";
@@ -53,6 +53,7 @@ return(
   <div>
   <Row className={stylesadmin.root}> 
     <Uploader/>
+   {/*  <UploadEvent/> */}
    <ToastContainer/>  
   </Row>
 </div>
