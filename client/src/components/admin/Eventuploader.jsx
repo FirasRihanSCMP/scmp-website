@@ -80,7 +80,7 @@ const onLinkChange = async (e) => {
 
     if (window.confirm("Press a button!")) {
 
-      await axios.post("http://www.scmp-lb.com/api/EventUpload", data, {
+      await axios.post("https://www.scmp-lb.com/api/EventUpload", data, {
         headers: {
           "Content-Type": "multipart/form-data",
         }
