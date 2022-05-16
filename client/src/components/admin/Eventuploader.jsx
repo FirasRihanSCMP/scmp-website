@@ -140,7 +140,7 @@ const onELinkChange = async (e) => {
           <p>Brief</p>
           <textarea id="textarea-content-2" required rows="3" cols="45" type="text" onBlur={(e) => { onBriefChange(e) }} />
           <p>Paragraph</p>
-          <textarea id="textarea-content-3" required rows="5" cols="45" type="text" onBlur={(e) => { onParagraphChange(e) }} />
+          <textarea id="textarea-content-3"  rows="5" cols="45" type="text" onBlur={(e) => { onParagraphChange(e) }} />
           <p>Link</p>
           <textarea id="textarea-content-3"  rows="5" cols="45" type="text" onBlur={(e) => { onELinkChange(e) }} />
 
