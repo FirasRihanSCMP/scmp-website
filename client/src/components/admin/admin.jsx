@@ -34,11 +34,11 @@ checkLogged()
      axios.post('')
  }
  const setResult=(e)=>{
-  console.log(e) 
+ /*  console.log(e)  */
   if(e===false||e==="Network Error"||typeof e==="undefined"){
     setloggedIn(false)
   }
-else{console.log(e) 
+else{/* console.log(e)  */
   setloggedIn(true)}
  } 
 /* console.log(fileSelected.target) */

@@ -29,8 +29,8 @@ const db = mysql.createPool({
   database: "sc34mpr_scmp",
   dateStrings: true,
   
-}); */
-
+});
+ */
 const storage = multer.diskStorage({
   destination: (req, files, cb) => {
     cb(null, '../client/build/imgs/events')
@@ -143,7 +143,8 @@ app.post("/api/SeperateEvent", async (req, res, err) => {
 
 
 var fileUpload = multer({ storage:storage,
-limits:{fileSize:150*1024*1024}
+limits:{fileSize:150*1024*1024,
+fieldNameSize:200}
 })
 const multipleUpload = fileUpload.fields([{ name: 'coverPhoto', maxCount: 1 }, { name: 'innerPhotos', maxCount: 30 }])
 
@@ -151,7 +152,7 @@ const multipleUpload = fileUpload.fields([{ name: 'coverPhoto', maxCount: 1 }, {
 
 
 app.post("/api/EventUpload", multipleUpload, async (req, res, err) => {
-  console.log("hello there")
+  console.log(req.files)
   if (!!req.files) {
 
     try {

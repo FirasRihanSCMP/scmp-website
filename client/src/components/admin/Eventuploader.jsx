@@ -7,6 +7,7 @@ import { toast } from "react-toastify"
 import DatePicker from 'sassy-datepicker'
 import { Row, Button, Col } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+
 export default function Uploader() {
   const [files, setFiles] = useState([]);
   const [file, setFile] = useState([]);
@@ -18,8 +19,15 @@ export default function Uploader() {
   let navigate = useNavigate()
   const data = new FormData();
   let coverPhoto, innerPhotos;
-  var FinalDate = ""
+  var FinalDate = getFullDate(date.toString());
+data.append('ELink','')
+data.append('date',FinalDate)
+data.append('title','')
+data.append('brief','')
+data.append('paragraph','')
+/* console.log(FinalDate) */
   const dateHandler = async (date) => {
+if(data.has('date')){  data.delete('date')}  
     FinalDate = getFullDate(date.toString());
     data.append('date', FinalDate)
 
@@ -27,64 +35,64 @@ export default function Uploader() {
 
 
   const onInputChangeMultiple = async (e) => {
-    data.delete('innerPhotos')
+    if(data.has('innerPhotos')){data.delete('innerPhotos')} 
+    
     innerPhotos = e.target.files
-    if (innerPhotos) {
+    if (innerPhotos.length>0) {
+    /*   console.log('okk') */
       for (let i = 0; i < innerPhotos.length; i++) {
         data.append('innerPhotos', innerPhotos[i], innerPhotos[i].name)
       }
     }
-    for (var pair of data.entries()) {
-      console.log(pair[0] + ', ' + pair[1].name);
-    }
+
   };
 
   const onInputChange = async (e) => {
-    data.delete('coverPhoto')
+    if(data.has('coverPhoto')){
+      data.delete('coverPhoto')
+    } 
+    
     coverPhoto = e.target.files
-    if (coverPhoto) {
+    
+    if (coverPhoto.length>0) {
+   /*    console.log('ok') */
       data.append('coverPhoto', coverPhoto[0], coverPhoto[0].name)
     }
   }
   const onTitleChange = async (e) => {
-  
+    if(data.has('title')){
+      data.delete('title')
+    } 
+    
       data.append('title', e.target.value)
     
   }
   
   const onBriefChange = async (e) => {
-  
+    if(data.has('brief')){data.delete('brief')} 
+
     data.append('brief',  e.target.value)
   
 }
 const onParagraphChange = async (e) => {
+  if(data.has('paragraph')){data.delete('paragraph')} 
   
   data.append('paragraph',  e.target.value)
 
 }
-const onDateChange = async (e) => {
-  
-  data.append('date', date)
 
-}
-const onLinkChange = async (e) => {
+const onELinkChange = async (e) => {
+  if(data.has('ELink')){data.delete('ELink')} 
   
-  data.append('date', date)
+  data.append('ELink', e.target.value)
 
 }
   const onSubmitFile = async (e) => {
     e.preventDefault();
-    data.delete('Elink')
-    data.append('ELink', ELink)
    
-
     if (window.confirm("Press a button!")) {
 
-      await axios.post("https://www.scmp-lb.com/api/EventUpload", data, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        }
-      })
+      await axios.post("https://www.scmp-lb.com/api/EventUpload", data)
         .then((e) => {
 
           toast.success("Upload success");
@@ -95,14 +103,17 @@ const onLinkChange = async (e) => {
 
         })
         .catch((e) => {
-          console.log(e)
+         /*  console.log(e) */
           toast.error("Upload error");
         });
     }
+
   }
 
   return (
     <form method="post" action="#" id="#" className={'eventForm'} onSubmit={onSubmitFile}>
+     
+     
       <Row><Col><div className="form-group files">
         <label className={'eventUploadTitle'}>Upload A Cover Photo</label>
         <input
@@ -130,7 +141,8 @@ const onLinkChange = async (e) => {
           <textarea id="textarea-content-2" required rows="3" cols="45" type="text" onBlur={(e) => { onBriefChange(e) }} />
           <p>Paragraph</p>
           <textarea id="textarea-content-3" required rows="5" cols="45" type="text" onBlur={(e) => { onParagraphChange(e) }} />
-
+          <p>Link</p>
+          <textarea id="textarea-content-3"  rows="5" cols="45" type="text" onBlur={(e) => { onELinkChange(e) }} />
 
           <DatePicker onChange={dateHandler} />
 
