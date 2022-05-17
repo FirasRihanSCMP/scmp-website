@@ -60,14 +60,20 @@ app.use(express.static(path.resolve(__dirname, '../client', 'build')))
 /* app.get("api/login",validateToken, async (req, res) => {
 
 }) */
+function byDate(a, b){
+  return new Date(b.EDate).valueOf() - new Date(a.EDate).valueOf();
+
+}
 
 app.get("/api/Events", async (req, res) => {
+  
   try {
-   console.log("ok")
     const sqlFetch = "SELECT * FROM `events` ORDER BY `EID` DESC";
     await db.query(sqlFetch, async (err, result) => {
       console.log(result)
-      return res.send(result);
+      if(result){
+        result= result.sort(byDate)
+      return res.send(result);}
     });
   } catch (error) {
     console.log(error);

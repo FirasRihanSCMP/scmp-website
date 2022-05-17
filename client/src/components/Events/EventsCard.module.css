@@ -30,7 +30,7 @@
    }
    .cardtitle{
      font-family: 'lemon';
-     font-size: 20px;
+     font-size: 17px !important;
    }
    .cardLinks{
      margin-right: 0;

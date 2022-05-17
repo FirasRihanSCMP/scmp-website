@@ -34,7 +34,7 @@ export default function Events(props) {
       <TopTitle title={"Events"}/>
   <Row className={`g-4 ${stylesDepPage.root}`}>
 
-    {EventsLists.length>0? EventsLists.map((val)=>{return <Col key={val.EID} xs={12} sm={12}md={6}>
+    {EventsLists.length>0? EventsLists.map((val)=>{return <Col key={val.EID} xs={12} sm={6} md={6} lg={4}>
    
         <EventsCard  className={stylesDepPage.Col} link={val.ELink} date={val.EDate} Photos={val.EPhotos} paragraph={val.EParagraph} title={val.ETitle} text2={val.EBrief} src={val.EID}  img={`/events/${val.ECover} `}  />
       </Col>})  
