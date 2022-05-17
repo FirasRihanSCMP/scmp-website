@@ -70,10 +70,10 @@ app.get("/api/Events", async (req, res) => {
   try {
     const sqlFetch = "SELECT * FROM `events` ORDER BY `EID` DESC";
     await db.query(sqlFetch, async (err, result) => {
-      console.log(result)
+  
       if(result){
-        orderedResult= result.sort(byDate)
-      return res.send(orderedResult);}
+        result= result.sort(byDate)
+      return res.send(result);}
     });
   } catch (error) {
     console.log(error);
