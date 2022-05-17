@@ -72,8 +72,8 @@ app.get("/api/Events", async (req, res) => {
     await db.query(sqlFetch, async (err, result) => {
       console.log(result)
       if(result){
-        result= result.sort(byDate)
-      return res.send(result);}
+        orderedResult= result.sort(byDate)
+      return res.send(orderedResult);}
     });
   } catch (error) {
     console.log(error);
