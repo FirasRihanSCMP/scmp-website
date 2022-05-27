@@ -103,7 +103,7 @@ const options={
    
     if (window.confirm("Press a button!")) {
 
-      await axios.post("http://192.168.0.140:3002/api/EventUpload", data,options)
+      await axios.post("https://www.scmp-lb.com/api/EventUpload", data,options)
         .then((e) => {
 
           toast.success("Upload success");
