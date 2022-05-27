@@ -19,20 +19,6 @@ export default function Admin() {
   TabTitle('Admin - Scientific Center For Manufacturing And Production')
   const {state} = useLocation();
 const [loggedIn, setloggedIn] = useState(false);
-/* 
-useEffect(()=>{
-  const checkLogged =async()=>{
-    const valid=await logIn()
-    console.log(valid)
-    setloggedIn(valid)
-  }
-checkLogged()
-
-  }
-,[]) */
- const fileUploadHandler = ()=>{
-     axios.post('')
- }
  const setResult=(e)=>{
  /*  console.log(e)  */
   if(e===false||e==="Network Error"||typeof e==="undefined"){
@@ -41,11 +27,7 @@ checkLogged()
 else{/* console.log(e)  */
   setloggedIn(true)}
  } 
-/* console.log(fileSelected.target) */
-/*  const [file, setFile] = useState(null);
- const handleChange = file => {
-   setFile(file);
- }; */
+
 
 
 return(

@@ -7,9 +7,10 @@ import { toast } from "react-toastify"
 import DatePicker from 'sassy-datepicker'
 import { Row, Button, Col } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-
+import { CircularProgressbar } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
 export default function Uploader() {
-  const [files, setFiles] = useState([]);
+  const [percentage, setPercentage] = useState(0);
   const [file, setFile] = useState([]);
   const [date, setDate] = useState(new Date());
   const [brief, setBrief] = useState('');
@@ -87,18 +88,29 @@ const onELinkChange = async (e) => {
   data.append('ELink', e.target.value)
 
 }
+const options={
+  onUploadProgress :(progressEvent)=>{
+    const{loaded, total} =progressEvent;
+    let percent = Math.floor(loaded*100 / total)
+    console.log(percent+'%,'+ loaded/1000000 +'mb of '+total/1000000)
+  if( percent < 100){
+    setPercentage(percent)
+  }
+  }
+} 
   const onSubmitFile = async (e) => {
     e.preventDefault();
    
     if (window.confirm("Press a button!")) {
 
-      await axios.post("https://www.scmp-lb.com/api/EventUpload", data)
+      await axios.post("http://192.168.0.140:3002/api/EventUpload", data,options)
         .then((e) => {
 
           toast.success("Upload success");
-          /*   setTimeout(() => {
-              navigate("/Events")
-            }, 3000); */
+          setPercentage(100)
+         setTimeout(() => {
+            setPercentage(0)
+            }, 3000); 
 
 
         })
@@ -110,10 +122,11 @@ const onELinkChange = async (e) => {
 
   }
 
-  return (
+  return (<div className="uploaderRoot" >
+
     <form method="post" action="#" id="#" className={'eventForm'} onSubmit={onSubmitFile}>
-     
-     
+    
+  
       <Row><Col><div className="form-group files">
         <label className={'eventUploadTitle'}>Upload A Cover Photo</label>
         <input
@@ -121,7 +134,6 @@ const onELinkChange = async (e) => {
           type="file"
           className="form-control"
           onChange={onInputChange}
-
         />
       </div>
         <br />
@@ -134,7 +146,18 @@ const onELinkChange = async (e) => {
             onChange={onInputChangeMultiple}
             multiple
           />
-        </div></Col>
+        </div>
+        {percentage>0?  
+ 
+ <div className={"circularProgressDiv"}>      <CircularProgressbar
+ value={percentage}
+ maxValue={100}
+ text={`${percentage}%`}
+ strokeWidth={5}
+ className={"circularProgress"}
+/></div>
+: <div></div>} 
+        </Col>
         <Col><p>Title</p>
           <textarea id="textarea-content-1" required rows="3" cols="45" type="text" onBlur={(e) => { onTitleChange(e) }} />
           <p>Brief</p>
@@ -149,7 +172,8 @@ const onELinkChange = async (e) => {
 
           <br />
           <Button type="submit" variant="info">Submit</Button></Col>
+          
       </Row>
-    </form>
+    </form></div>
   );
 }

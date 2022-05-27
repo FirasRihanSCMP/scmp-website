@@ -14,15 +14,15 @@ const {createToken,validateToken}=require('./JWT')
 const { fstat } = require('fs')
 const upload = multer({ dest: '../client/build/imgs/events' })
 const app = express();
-const db = mysql.createPool({
+/* const db = mysql.createPool({
   host: "207.180.243.8",
   user: "sc34mpr_adminSCMP",
   password: "db@SqlSCMP2021",
   database: "sc34mpr_SCMP",
   dateStrings: true,
   
-});
-/* const db = mysql.createPool({
+}); */
+const db = mysql.createPool({
   host: "localhost",
   user: "adminSCMP",
   password: "db@SqlSCMP2021",
@@ -30,7 +30,7 @@ const db = mysql.createPool({
   dateStrings: true,
   
 });
- */
+
 const storage = multer.diskStorage({
   destination: (req, files, cb) => {
     cb(null, '../client/build/imgs/events')
@@ -176,13 +176,14 @@ app.post("/api/EventUpload", multipleUpload, async (req, res, err) => {
       console.log("reached ")
       const UserInsert = "INSERT INTO `events` ( `ETitle`, `EBrief`, `EParagraph`, `EPhotos`, `ECover`, `EDate`, `ELink`) VALUES (?,?,?,?,?,?,?)";
       await db.query(UserInsert, [title, brief, paragraph, JSON.stringify(photoArray), coverphoto, date,ELink], (err, result) => {
-        if (err) { console.log(err); }
+        if (err) { console.log(err);
+        res.sendStatus(401) }
         else { res.sendStatus(201); }
       });
 
     } catch (err) {
       console.log(err);
-      res.send("Error adding")
+      res.send(401)
       ;
       // console.log(error);
     }

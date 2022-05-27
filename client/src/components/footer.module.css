@@ -1,7 +1,7 @@
 @import url("./fonts.css");
 .rootFooter p{    margin-bottom: 0;
   font-family: 'gothic';
- 
+ z-index: 100 !important;
 color: rgb(223, 223, 223);}
 
 
