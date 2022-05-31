@@ -92,7 +92,7 @@ const options={
   onUploadProgress :(progressEvent)=>{
     const{loaded, total} =progressEvent;
     let percent = Math.floor(loaded*100 / total)
-  
+  console.log(percent/1000000 +"of"+total/1000000)
   if( percent < 100){
     setPercentage(percent)
   }
