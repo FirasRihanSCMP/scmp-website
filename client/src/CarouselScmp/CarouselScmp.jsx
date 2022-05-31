@@ -14,6 +14,7 @@ export default function CarouselScmp(props) {
                 {img.link?<Link to={`/${img.link}`}><LazyLoadImage
                           style={{height: `${props.style}vw` }}
                         className={`d-block w-100 ${stylesCarousel.img}`}
+                        effect="blur"
                         src={"../../imgs/"+img.img}
                         
                         alt="First slide"
@@ -21,7 +22,7 @@ export default function CarouselScmp(props) {
                           style={{height: `${props.style}vw` }}
                         className={`d-block w-100 ${stylesCarousel.img}`}
                         src={"../../imgs/"+img.img}
-                        
+                        effect="blur"
                         alt="First slide"
                     />}   
                 </Carousel.Item>
