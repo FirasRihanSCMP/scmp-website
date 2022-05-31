@@ -19,9 +19,7 @@ export default function EventsComp(props) {
 <Carousel pause={true} fade={false} indicators={false} className={stylesEvent.carouselImages}>
         {props.img ? JSON.parse(props.img).map((val) => {
           return <Carousel.Item interval={2000} key={val} className={stylesEvent.carouselmain} >
-           
-            <LazyLoadImage
-            effect="blur"
+            <img
               className={`d-block w-100 ${stylesEvent.img}`}
               src={"../../imgs/events/" + val}
               alt="First slide"

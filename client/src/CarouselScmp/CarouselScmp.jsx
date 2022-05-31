@@ -3,7 +3,7 @@ import { Carousel } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import stylesCarousel from "./carouselSCMP.module.css"
 import { Link } from 'react-router-dom';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
+
 export default function CarouselScmp(props) {
 
     return (
@@ -11,18 +11,17 @@ export default function CarouselScmp(props) {
             <Carousel fade={true} >
                {props.img ? props.img.map(img => { 
                   return  <Carousel.Item interval={img.duration || 3000} key={img.id} className={stylesCarousel.carouselmain}>
-                {img.link?<Link to={`/${img.link}`}><LazyLoadImage
+                {img.link?<Link to={`/${img.link}`}><img
                           style={{height: `${props.style}vw` }}
                         className={`d-block w-100 ${stylesCarousel.img}`}
-                        effect="blur"
                         src={"../../imgs/"+img.img}
                         
                         alt="First slide"
-                    /></Link> :<LazyLoadImage
+                    /></Link> :<img
                           style={{height: `${props.style}vw` }}
                         className={`d-block w-100 ${stylesCarousel.img}`}
                         src={"../../imgs/"+img.img}
-                        effect="blur"
+                        
                         alt="First slide"
                     />}   
                 </Carousel.Item>
