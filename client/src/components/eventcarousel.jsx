@@ -2,6 +2,7 @@ import React from 'react'
 import { Carousel } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css"; 
 import stylesEvent from "./eventcarousel.module.css"
+
 export default function Eventcarousel(props) {
     return (
         <div className={stylesEvent.bodyWidth}>

@@ -12,12 +12,14 @@ import Spinner from "../ClipLoader/Spinner";
 import { TabTitle } from "../../actions/GeneralFunctions";
 import { Col, Row } from "react-bootstrap";
 import stylesEvent from "../eventcarousel.module.css"
+import AliceCarousel from 'react-alice-carousel';
+import 'react-alice-carousel/lib/alice-carousel.css';
 export default function SeperateEvent(props) {
   const [Event, setEvent] = useState([]);
   const [Loaded, setLoaded] = useState(false)
   const [errorFetchedChecker, seterrorFetchedChecker] = useState(false);
   let { id } = useParams();
-
+  const [images, setImages] = useState([])
   useEffect(() => {
     async function fetchData() {
       await axios
@@ -33,7 +35,7 @@ export default function SeperateEvent(props) {
             TabTitle(`${props.title || response.data[0].ETitle}`)
             setLoaded(true)
             setEvent(response.data)
-
+          
 
           }
         })
@@ -56,6 +58,12 @@ export default function SeperateEvent(props) {
     var match = url.match(regExp);
     return (match&&match[7].length==11)? match[7] : false;
 }
+/* const handleDragStart = (e) => e.preventDefault();
+
+console.log(images)
+const items= images? JSON.parse(images).map((val) => {
+ return <img src={"../../imgs/events/" + val} onDragStart={handleDragStart} role="presentation" />
+}) :0 */
   return (
     <div className={Topstyles.root}>
 
@@ -65,7 +73,9 @@ export default function SeperateEvent(props) {
      
         <Row> 
         {props.link || Event[0].ELink ? ( <Col xs={props.link || Event[0].ELink ? {order:0} :12} md={6}> <div className={stylesEvent.root} ><Youtube  className={Topstyles.YoutubeVid} videoId={youtubeParser(props.link || Event[0].ELink)}/></div> </Col>):""}
-          <Col xs={props.link || Event[0].ELink ? {order:2} : 12} md={6}> <EventsComp img={props.img || Event[0].EPhotos} />
+          <Col xs={props.link || Event[0].ELink ? {order:2} : 12} md={6}> 
+        {/*   <AliceCarousel mouseTracking items={items} /> */}
+          <EventsComp img={props.img || Event[0].EPhotos} />
 </Col>
 <Col  xs={props.link || Event[0].ELink ? {order:1} : 12} md={ props.link || Event[0].ELink ? {span:12,order:"first"} : 6}><div className={Topstyles.text}><p>{props.text2 || Event[0].EBrief}</p>
 <p>{props.paragraph || Event[0].EParagraph||""}</p></div></Col>
