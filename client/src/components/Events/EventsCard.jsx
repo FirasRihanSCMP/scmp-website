@@ -1,5 +1,6 @@
 import React from 'react'
 import { Card } from 'react-bootstrap'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 import { Link } from 'react-router-dom'
 import stylesEventCard from "./EventsCard.module.css"
 export default function EventsCard(props) {
@@ -8,11 +9,16 @@ export default function EventsCard(props) {
             
            <Link className={stylesEventCard.cardLinks} to={`/Events/${props.src}`} > 
                  <Card className={stylesEventCard.cardsbody }>
-         <Card.Img
+      <LazyLoadImage
+       className={stylesEventCard.cardImage}
+       variant="top"
+       effect='blur'
+       src={"./imgs/" + props.img} />
+      {/*    <Card.Img
           className={stylesEventCard.cardImage}
           variant="top"
           src={"./imgs/" + props.img}
-        />
+        /> */}
         <Card.Body className={stylesEventCard.cardBody}>
     
             <Card.Title className={stylesEventCard.cardtitle}>{props.title}</Card.Title>

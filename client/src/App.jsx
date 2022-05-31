@@ -19,7 +19,7 @@ import Ideas from "./components/AboutUs/Ideas";
 import NotFound from "./components/NotFound";
 import Navigation from "./components/Navigation";
 import Sws from "./components/sws/sws";
-
+import './styles/1.css'
 
 
 
