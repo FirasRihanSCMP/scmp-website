@@ -55,6 +55,7 @@ export default function App(props) {
         }
       ></Route> 
       <Route path="/" element={<Home />} exact></Route>
+      <Route path="notFound" element={<NotFound/>} ></Route>
       <Route path="*" element={<NotFound/>} ></Route>
     </Routes> <Footer/></div>
   );

@@ -136,7 +136,7 @@ console.log("hi")
       }
       else if (result.length === 0) {
         console.log("2")
-        res.send("not found")
+        res.status(301).redirect("https://www.scmp-lb.com/notFound")
       }
       else {
         console.log(result)
