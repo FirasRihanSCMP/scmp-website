@@ -125,21 +125,21 @@ app.post("/api/AddU_SCMP", async (req, res) => {
 
 app.post("/api/SeperateEvent", async (req, res, err) => {
   const { EID } = req.body
-console.log("hi")
+
   try {
     const sqlFetch = "SELECT * FROM events WHERE `EID`=(?)";
     await db.query(sqlFetch, [EID], async (err, result) => {
   
       if (err) {
-        console.log("1"+err )
+        console.log(err)
         res.sendStatus(500);
       }
       else if (result.length === 0) {
-        console.log("2")
-        res.redirect("https://www.scmp-lb.com/notFound")
+      
+        res.send("not found")
       }
       else {
-        console.log(result)
+        
         res.send(result);
       }
     });
