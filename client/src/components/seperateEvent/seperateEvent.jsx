@@ -28,7 +28,7 @@ export default function SeperateEvent(props) {
 
           if (response.data === "not found") {
             setLoaded(false)
-
+            window.location.href="/notFound"
 
           }
           else if (response.data.length > 0) {
