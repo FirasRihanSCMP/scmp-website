@@ -51,13 +51,13 @@ body{
     .img{
         object-fit: cover;
         width: 100%;
-        height: 60vw;
+        height: 65vw;
     }
     
 }
 @media (max-width:450px){
 
     .img{
-        height: 65vw;
+        height: 70vw;
     }
   }
