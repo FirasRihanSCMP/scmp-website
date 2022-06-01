@@ -125,7 +125,7 @@ app.post("/api/AddU_SCMP", async (req, res) => {
 
 app.post("/api/SeperateEvent", async (req, res, err) => {
   const { EID } = req.body
-
+console.log("hi")
   try {
     const sqlFetch = "SELECT * FROM events WHERE `EID`=(?)";
     await db.query(sqlFetch, [EID], async (err, result) => {
