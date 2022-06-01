@@ -10,9 +10,9 @@ export default function NotFound() {
     }, [input]) */
     return (
         <div className="mainNotFound">
-            <h1 className="notfound">Sorry! <br/> We couldn't find that page.</h1>
-            <p className="notfound"> Go To <Link className="LinkHome" to="/">Home?</Link></p>
-        <div className="divb">.</div>
+            <h3 className="notfound">Sorry! <br/> Your request is not valid!</h3>
+            <p className="notfound"> Navigate To <Link className="LinkHome" to="/">Home?</Link></p>
+    
         </div>
     )
 }

@@ -3,8 +3,9 @@
 .notfound{
     font-family: 'Lemon';
  text-align: center;
-    font-size: 5vw;
-    margin-top: 200px;
+    font-size: 3vw;
+    margin-top: 4vw !important;
+
     width: 50%;
     margin: auto;
 }
@@ -12,6 +13,8 @@
     height: 20vh;
 }
 .mainNotFound{
+    margin-top: 100px!important;
+    margin-bottom: 100px!important;
     margin:auto;
 }
 .LinkHome{
