@@ -14,22 +14,22 @@ const {createToken,validateToken}=require('./JWT')
 const { fstat } = require('fs')
 const upload = multer({ dest: '../client/build/imgs/events' })
 const app = express();
-/* const db = mysql.createPool({
+const db = mysql.createPool({
   host: "207.180.243.8",
   user: "sc34mpr_adminSCMP",
   password: "db@SqlSCMP2021",
   database: "sc34mpr_SCMP",
   dateStrings: true,
   
-}); */
-const db = mysql.createPool({
+});
+/* const db = mysql.createPool({
   host: "localhost",
   user: "adminSCMP",
   password: "db@SqlSCMP2021",
   database: "sc34mpr_scmp",
   dateStrings: true,
   
-});
+}); */
 
 const storage = multer.diskStorage({
   destination: (req, files, cb) => {
