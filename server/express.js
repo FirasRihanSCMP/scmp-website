@@ -139,6 +139,7 @@ app.post("/api/SeperateEvent", async (req, res, err) => {
         res.send("not found")
       }
       else {
+        console.log(result)
         res.send(result);
       }
     });
