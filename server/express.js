@@ -20,8 +20,6 @@ const db = mysql.createPool({
   password: "db@SqlSCMP2021",
   database: "sc34mpr_SCMP",
   dateStrings: true,
-  charset: "UTF-8 Unicode (utf8)"
-  
 });
 /* const db = mysql.createPool({
   host: "localhost",
