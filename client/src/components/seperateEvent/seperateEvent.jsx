@@ -1,7 +1,7 @@
 import axios from "axios";
 import React from "react";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import Events from "../Events/Events";
 import EventsComp from "../EventsComp";
 import NotFound from "../NotFound";
@@ -19,19 +19,20 @@ export default function SeperateEvent(props) {
   const [Loaded, setLoaded] = useState(false)
   const [errorFetchedChecker, seterrorFetchedChecker] = useState(false);
   let { id } = useParams();
+  let navigate= useNavigate()
   const [images, setImages] = useState([])
   useEffect(() => {
     async function fetchData() {
       await axios
         .post("https://www.scmp-lb.com/api/SeperateEvent", { EID: id })
         .then((response) => {
-
+          console.log(response.data)
           if (response.data === "not found") {
-            setLoaded(false)
-            window.location.href="/notFound"
+           
+            navigate("/notFound", { replace: true });
 
           }
-          else if (response.data.length > 0) {
+          else if (response.data.length > 0 && response.data !== "not found") {
             TabTitle(`${props.title || response.data[0].ETitle}`)
             setLoaded(true)
             setEvent(response.data)
