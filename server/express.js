@@ -131,9 +131,11 @@ app.post("/api/SeperateEvent", async (req, res, err) => {
     await db.query(sqlFetch, [EID], async (err, result) => {
   
       if (err) {
+        console.log("1"+err )
         res.sendStatus(500);
       }
       else if (result.length === 0) {
+        console.log("2")
         res.send("not found")
       }
       else {
@@ -141,6 +143,7 @@ app.post("/api/SeperateEvent", async (req, res, err) => {
       }
     });
   } catch (error) {
+    
     console.log(error);
   }
 })
@@ -174,6 +177,7 @@ app.post("/api/EventUpload", multipleUpload, async (req, res, err) => {
       console.log(coverphoto)
       console.log("reached ")
       const UserInsert = "INSERT INTO `events` ( `ETitle`, `EBrief`, `EParagraph`, `EPhotos`, `ECover`, `EDate`, `ELink`) VALUES (?,?,?,?,?,?,?)";
+
       await db.query(UserInsert, [title, brief, paragraph, JSON.stringify(photoArray), coverphoto, date,ELink], (err, result) => {
         if (err) { console.log(err);
         res.sendStatus(401) }
