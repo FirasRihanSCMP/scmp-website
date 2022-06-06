@@ -52,7 +52,7 @@ export default function Sws() {
 
     <div className={styleSws.root} id={"roots"}>
     <div className={styleSws.swsCarousel}><CarouselScmp style={20} img={Imgs} /></div>
-    <h2 className={styleSws.header}>SCMP congratulates all participants in SWS2022!</h2>
+    <h2 className={styleSws.header}>SCMP congratulates all participants in the SWS2022!</h2>
 
   
     <div className={styleSws.firstParagraph}>  
