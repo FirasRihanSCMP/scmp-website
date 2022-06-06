@@ -7,8 +7,9 @@
 
 # testing
 /coverage
-
-
+/node_modules
+/client/node_modules
+/server/node_modules
 
 # misc
 .DS_Store
@@ -20,3 +21,4 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+node_modules

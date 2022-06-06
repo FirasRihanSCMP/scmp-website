@@ -25,7 +25,6 @@ export default function Home() {
 
           }
           else if (response.data.length > 0) {
-            console.log(response.data)
             setLoaded(true)
             setImgs(response.data)
           }

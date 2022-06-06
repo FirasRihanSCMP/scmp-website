@@ -42,8 +42,8 @@ export default function Sws() {
       fetchData();
     }
   }, [errorFetchedChecker]);
-  const container = document.querySelector('.roots')
-;
+
+
 
 // after initialization you can change the fireworks parameters
 

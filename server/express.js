@@ -78,6 +78,11 @@ app.get("/api/Events", async (req, res) => {
     console.log(error);
   }
 });
+/* var fileUploadSWS = multer({ storage:storage,
+  limits:{fileSize:150*1024*1024,
+  fieldNameSize:200}
+  })
+  const multipleUploadSWS = fileUpload.fields({ name: 'sws-carousel', maxCount: 30 }) */
 
 app.get("/api/SWS", async (req, res) => {
   try {

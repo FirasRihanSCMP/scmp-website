@@ -130,7 +130,7 @@ li{
 }
 @media(max-width:960px){
     .swsCarousel{
-        width: 70%!important;
+        width: 80%!important;
        
         margin: auto;
     }
