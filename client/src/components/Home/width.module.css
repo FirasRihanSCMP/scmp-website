@@ -2,8 +2,32 @@
     width: 70%;
     margin: auto;
 }
+.carouselContainer{
+    margin: auto;
+    width: 80% !important;
+}
+@media(max-width:1215px){
+
+    .carouselContainer{
+        width: 100%!important;
+       
+        margin: auto;
+    }
+}
+@media(max-width:960px){
+    .carouselContainer{
+        width: 100%!important;
+       
+        margin: auto;
+    }
+}
 @media (max-width:550px) {
     .root{
         width: 90%;
+    }
+    .carouselContainer{
+        width: 100%!important;
+       
+        margin: auto;
     }
 }
