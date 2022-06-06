@@ -16,7 +16,7 @@ export default function Home() {
   useEffect(() => {
     async function fetchData() {
       await axios
-        .get("http://192.168.0.140:3002/api/home")
+        .get("https://www.scmp-lb.com/api/home")
         .then((response) => {
 
           if (response.data === "not found") {
