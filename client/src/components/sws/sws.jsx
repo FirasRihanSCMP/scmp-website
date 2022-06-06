@@ -5,10 +5,7 @@ import { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { TabTitle } from '../../actions/GeneralFunctions';
 import CarouselScmp from '../../CarouselScmp/CarouselScmp';
-
-
 import Spinner from '../ClipLoader/Spinner';
-
 import styleSws from "./sws.module.css"
 export default function Sws() {
   TabTitle('Startup-Weekend Support - Scientific Center For Manufacturing And Production')
@@ -45,21 +42,25 @@ export default function Sws() {
       fetchData();
     }
   }, [errorFetchedChecker]);
+  const container = document.querySelector('.roots')
+;
 
-  return <div> {Loaded ? <div>
+// after initialization you can change the fireworks parameters
 
 
-    <div className={styleSws.root}>
+  return <div> {Loaded ? <div >
+
+    <div className={styleSws.root} id={"roots"}>
     <div className={styleSws.swsCarousel}><CarouselScmp style={20} img={Imgs} /></div>
     <h2 className={styleSws.header}>SCMP congratulates all participants in SWS2022!</h2>
 
   
-    <p className={styleSws.firstParagraph}>  
+    <div className={styleSws.firstParagraph}>  
     Greetings candidates!
     <br/><br/>
-    <p className={styleSws.Indent}>
+    <div className={styleSws.Indent}>
 First of all, we would like to thank each participant that have joined us in our first Startup Weekend Support SWS-2022 event which was held on the 28th of May in cooperation with the Lebanese University. 
-</p>
+</div> <br/>
 As you know, the number of applicants for this event has reached 76 competing teams, from whom we preselected 37 different ideas from various fields (Health, Agro-Food, Education, Technology and E-Business). 
 
 After presenting these ideas in front of specialized committees composed of academics, experts and businessmen, it became clear to us that all the ideas have potential, but since we have to choose a finite number of ideas, these 37 chosen ideas were further filtered out and sorted according to the priorities that the Scientifc Center for Manufacturing and Production is looking for in addition to the consultation of the evaluation committee which led us to choose the following 14 ideas listed alphabetically, these 14 ideas will be proceeding to the next stage:
@@ -85,7 +86,7 @@ The above-mentioned ideas that qualified for the semi-finals will be notified la
 
 As for the ideas that were not selected, they will remain with us in a list of ideas that will be presented to different businessmen and financiers in a frequent manner in hopes of finding someone interested in incubating them in order to grant you further opportunities and help you grow.
 <br/>
-</p>
+</div>
 {/*    
   
   
