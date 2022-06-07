@@ -12,14 +12,14 @@ export default function CarouselScmp(props) {
            {props.img ? props.img.map(img => { 
               return  <Carousel.Item interval={img.duration || 5000} key={img.id} className={stylesCarousel.carouselmain}>
             {img.link?<Link to={`/${img.link}`}>
-                <img
+                <img rel="preload" 
                       style={{height: `${props.style}vw` }}
                     className={`d-block w-100 ${stylesCarousel.img}`}
                    
                     src={"../../imgs/"+img.img}
                     
                     alt="First slide"
-                /></Link> :<img
+                /></Link> :<img rel="preload"
                       style={{height: `${props.style}vw` }}
                     className={`d-block w-100 ${stylesCarousel.img}`}
                     src={"../../imgs/"+img.img}
