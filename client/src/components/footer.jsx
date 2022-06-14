@@ -16,7 +16,7 @@ export default function Footer() {
             <Col className={stylesFooter.bottomLogo} sm={6}>
               <img
                 className={stylesFooter.logo}
-                src="./scmpfinalfooter.png"
+                src="../../scmp-logo.svg"
 
                 alt="The Scientific Center For Manufactring And Production"
               /> </Col>
@@ -39,21 +39,8 @@ export default function Footer() {
               <Link className={stylesFooter.LinksFooter} to="/Departments">Departments</Link>
               <Link className={stylesFooter.LinksFooter} to="/Auth">Webmail</Link>
               <Link className={stylesFooter.LinksFooter} to="/Events">Events</Link>
-            </div>
-          </Col>
-
-          <Col
-            xs={6}
-            sm={4}
-            lg={4}
-            className={[stylesFooter.footerCols, stylesFooter.col3]}
-          >
-            <p className={stylesFooter.yellowP}>LOCATION</p>
-            <div className={stylesFooter.infoFooter}>
-              <p>Beirut, Bir Hassan</p>
-              <p>Next to the Kuwaiti Embassy</p>
-              <p>Gardenia Building, 4th Floor</p>
-              <p className={stylesFooter.yellowP}>RESOURCES</p>
+           </div>
+           <p className={stylesFooter.yellowP}>RESOURCES</p>
               <p>Phone: +961 1 822041</p>
               <p>Mail : info@scmp-lb.com</p>
               <p>IT Support : IT.support@scmp-lb.com</p>
@@ -78,6 +65,23 @@ export default function Footer() {
                 <a className={stylesFooter.socialMedia} href="https://www.youtube.com/channel/UCsuOLHb18czf2YLYIoQv8LQ"> <svg fill="#000000" xmlns="http://www.w3.org/2000/svg" id={stylesFooter.youtube} viewBox="0 0 50 50" width="50px" height="50px"><path d="M 44.898438 14.5 C 44.5 12.300781 42.601563 10.699219 40.398438 10.199219 C 37.101563 9.5 31 9 24.398438 9 C 17.800781 9 11.601563 9.5 8.300781 10.199219 C 6.101563 10.699219 4.199219 12.199219 3.800781 14.5 C 3.398438 17 3 20.5 3 25 C 3 29.5 3.398438 33 3.898438 35.5 C 4.300781 37.699219 6.199219 39.300781 8.398438 39.800781 C 11.898438 40.5 17.898438 41 24.5 41 C 31.101563 41 37.101563 40.5 40.601563 39.800781 C 42.800781 39.300781 44.699219 37.800781 45.101563 35.5 C 45.5 33 46 29.398438 46.101563 25 C 45.898438 20.5 45.398438 17 44.898438 14.5 Z M 19 32 L 19 18 L 31.199219 25 Z" /></svg></a>
 
               </div>
+        
+          </Col>
+
+          <Col
+            xs={6}
+            sm={4}
+            lg={4}
+            className={[stylesFooter.footerCols, stylesFooter.col3]}
+          >
+            <p className={stylesFooter.yellowP}>LOCATION</p>
+            <div className={stylesFooter.infoFooter}>
+              <p>Beirut, Bir Hassan</p>
+              <p>Next to the Kuwaiti Embassy</p>
+              <p>Gardenia Building, 4th Floor</p>
+              <br/>
+              <iframe title="SCMP Location" id={stylesFooter.gmap_canvas} src="https://maps.google.com/maps?q=scientific%20center%20for%20manufacturing%20and%20production&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+
               {/*    <p>
                 Icons by 
                 <a className={stylesFooter.yellowP} href="https://icons8.com">

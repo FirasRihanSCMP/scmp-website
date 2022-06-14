@@ -1,17 +1,12 @@
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import stylesAuth from "./Auth.module.css";
-import axios from "axios";
-
-
-import { useNavigate } from 'react-router-dom';
+import Feasibility from "./Feasibility/Feasibility";
 import { login } from "../actions/login";
 import { TabTitle } from "../actions/GeneralFunctions";
 
 export default function Auth(props) {
   TabTitle('Authentication - Scientific Center For Manufacturing And Production')
-  let navigate = useNavigate();
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPass, setShowPass] = useState(false);
@@ -37,6 +32,7 @@ props.handleResult(response)
 } */
   return (
     <div>
+      <Feasibility/>
       <h1 className={stylesAuth.authTitle}>Staff Verification</h1>
       <Form className={stylesAuth.bodyWidth} onSubmit={Handlelogin}>
         <Form.Group className="mb-3" controlId="formBasicEmail">

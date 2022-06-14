@@ -4,6 +4,11 @@
  z-index: 100 !important;
 color: rgb(223, 223, 223);}
 
+#gmap_canvas{
+    width: 20vw;
+    height: 11vw !important;
+    margin-bottom: 10%;
+}
 
 #facebook{
     margin-right: 10px;
@@ -42,6 +47,11 @@ fill: url(#InstagramGradient);
 @media(max-width:885px){
 .footerCols{
     font-size: 15px;}
+    #gmap_canvas{
+        width: 35vw;
+        height: 25vw !important;
+    }
+    
 }
 .yellowP{
     color: #ffc41d!important;
@@ -127,8 +137,22 @@ margin-bottom: 2%;
     .scmpfooter{  
          margin-left:1.5rem;
     }
+    #gmap_canvas{
+        width: 25vw;
+        height: 15vw !important;
+    }
+}
+@media(max-width:1350px){
+    #gmap_canvas{
+        width: 22vw;
+        height: 15vw !important;
+    }
 }
 @media(max-width:991px){
+    #gmap_canvas{
+        width: 300px;
+        height: 180px !important;
+    }
     .firstCol{/* text-align: center; */
         padding-bottom: 5%;}
         .col2  {
@@ -149,6 +173,14 @@ margin-bottom: 2%;
         background-color: #212529;
         
     }
+/*     #gmap_canvas{
+        width: 35vw;
+        height: 25vw !important;
+    } */
+    #gmap_canvas{
+        width: 250px;
+        height: 180px !important;
+    }
 }
 @media (max-width:576px){
    .mainCont{
@@ -165,6 +197,10 @@ margin-bottom: 2%;
     .scmpfooter{
         font-size: 4.5vw;
     }
+    #gmap_canvas{
+        width: 300px;
+        height: 180px !important;
+    }
 }
 @media (max-width:553px){
 .bottomLogo{
@@ -180,4 +216,11 @@ margin-bottom: 2%;
 .FooterLocation{
     padding-left: 13%;
     padding-bottom: 3%;
+}
+@media (max-width:376px){
+    #gmap_canvas{
+        width: 250px;
+        height: 180px !important;
+    }
+
 }
