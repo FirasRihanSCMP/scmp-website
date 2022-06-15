@@ -28,7 +28,7 @@ export default function Footer() {
           <Col
             xs={6}
             sm={4}
-            lg={2}
+            lg={4}
             className={[stylesFooter.footerCols, stylesFooter.col2]}
           >
             {/*  <p>GET IN TOUCH</p> */}
@@ -43,7 +43,7 @@ export default function Footer() {
            <p className={stylesFooter.yellowP}>RESOURCES</p>
               <p>Phone: +961 1 822041</p>
               <p>Mail : info@scmp-lb.com</p>
-              <p>IT Support : IT.support@scmp-lb.com</p>
+              <p className={stylesFooter.itSupport}>IT Support : IT.support@scmp-lb.com</p>
 
               <div className={stylesFooter.socialMediaDiv}>
 

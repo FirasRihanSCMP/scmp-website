@@ -32,7 +32,7 @@ props.handleResult(response)
 } */
   return (
     <div>
-      <Feasibility/>
+ {/*      <Feasibility/> */}
       <h1 className={stylesAuth.authTitle}>Staff Verification</h1>
       <Form className={stylesAuth.bodyWidth} onSubmit={Handlelogin}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
