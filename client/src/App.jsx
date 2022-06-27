@@ -20,6 +20,7 @@ import NotFound from "./components/NotFound";
 import Navigation from "./components/Navigation";
 import Sws from "./components/sws/sws";
 import './styles/1.css'
+import Auth from "./components/Auth";
 
 
 
@@ -36,7 +37,7 @@ export default function App(props) {
     <Routes>
 
       <Route path="/InvFund" element={<InvFund/>}></Route>
-      <Route path="/auth" element={<Admin/>}></Route>
+      <Route path="/auth" element={<Auth/>}></Route>
       <Route path="/Research" element={<Research/>}></Route>
       <Route path="/TechProvider" element={<TechProvider/>}></Route>
       <Route path="/Ideas" element={<Ideas/>}></Route>

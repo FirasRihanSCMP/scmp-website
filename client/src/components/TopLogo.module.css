@@ -12,9 +12,15 @@
   padding-bottom: 1%;
   color: rgb(0, 0, 0);
   background: linear-gradient(-45deg, #df8a71, #f6cfaa, #f6cfaa, #fb9a9acc);
-  background-size: 300% 300%;
-  animation: gradient 8s ease infinite;
+
  
+}
+@media (min-width: 426px) {
+  .toplogobackground{
+    background: linear-gradient(-45deg, #df8a71, #f6cfaa, #f6cfaa, #fb9a9acc);
+    background-size: 300% 300%;
+    animation: gradient 8s ease infinite;
+  }
 }
 .col{
   margin-left: 2%;

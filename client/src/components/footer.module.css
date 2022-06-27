@@ -67,8 +67,8 @@ margin-top: 2%;
 margin-bottom: 2%;
 }
 .socialMediaDiv{
-    margin-bottom: 15%;
-    margin-top: 15%;
+    margin-bottom: 10%;
+    margin-top: 5%;
 }
 .firstCol{
    /*  display: flex;
@@ -123,7 +123,6 @@ margin-bottom: 2%;
     font-family: "lemon";
    font-size: 2.5vw;
    margin-top: 3%;
-    margin-left:1rem;
 }
 .LinksFooter a:hover{
     text-decoration: none;
@@ -154,17 +153,21 @@ margin-bottom: 2%;
         height: 180px !important;
     }
     .firstCol{/* text-align: center; */
-        padding-bottom: 5%;}
+        padding-bottom: 5%;
+text-align: center;    }
         .col2  {
             margin-left: 3%;
         }
         .copyrights{margin-top: 5%;}
+        .scmpfooter{
+            font-size: 40px;
+        }
 }
 @media(max-width:749px){
 
     
 }
-@media(max-width:775px){
+@media(max-width:821px){
     .rootFooter{
         padding-bottom: 2rem;
         padding-top: 5rem;
@@ -182,7 +185,7 @@ margin-bottom: 2%;
         height: 180px !important;
     }
 }
-@media (max-width:576px){
+@media (max-width:583px){
    .mainCont{
        width: 100%!important;
        max-width: none;
@@ -195,7 +198,7 @@ margin-bottom: 2%;
         margin:0;
     }
     .scmpfooter{
-        font-size: 1.5vw;
+        font-size: 40px;
     }
     #gmap_canvas{
         width: 300px;
@@ -206,7 +209,7 @@ margin-bottom: 2%;
 .bottomLogo{
     text-align: center;
 }   
-.logo{width: 130px;}
+.logo{width: 110px;}
 .scmpfooter{
     text-align: center;
     margin-left: 0;

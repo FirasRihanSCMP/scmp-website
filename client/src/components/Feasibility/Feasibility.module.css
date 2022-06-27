@@ -1,10 +1,139 @@
-.body{
-width: 50%;
-margin: auto;
-
+.body {
+  min-height: 60vh;
+  margin: auto;
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(247, 122, 122),
+    rgb(229, 171, 247)
+  );
+  padding: 5%;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+.FinalGrade {
+  width: 50vw !important;
+}
+.back {
+  background: rgba(255, 255, 255, 0.363);
+  margin: 2%;
+}
+.inputGrade {
+  width: 60px;
+  margin-right: 25px;
+}
+.Grade {
+  display: flex;
+  align-items: center;
+}
+.progressBar {
+  width: 80%;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  height: 10px;
+  background-color: rgb(255, 255, 255);
+  margin-bottom: 15px !important;
+  margin: auto;
 }
 
-.label{
-    margin-left: 2%;
-    float: right;
+.progressBar div {
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+
+  width: 33.3%;
+  height: 100%;
+  background-color: rgb(98, 0, 255);
+  transition: all 0.8s ease;
+}
+
+.base {
+  text-align: center;
+}
+textarea {
+  margin-top: 10px !important;
+}
+.footer button {
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(247, 122, 122),
+    rgb(229, 171, 247)
+  );
+  font-family: "lemon";
+  border: none;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 5px 15px;
+}
+.form {
+  font-size: 1vw;
+  font-family: "Almarai";
+}
+.title {
+  font-size: 20px;
+  color: aliceblue;
+  display: inline-block;
+  margin-bottom: 5% !important;
+}
+input {
+  margin-top: 10px;
+}
+
+.footer {
+  margin: auto;
+  text-align: center;
+}
+.rtl {
+  direction: rtl;
+}
+
+.label {
+  margin-left: 2%;
+  /*   float: right; */
+}
+.DPreview {
+  text-align: center;
+  font-size: 18px;
+}
+
+@media (min-width: 1151px) {
+  .rowTitle,
+  .Grade,
+  .title {
+    font-size: 19px;
+  }
+  .body {
+    min-height: 60vh;
+    width: 80% !important;
+  }
+}
+@media (max-width: 1150px) {
+  .rowTitle,
+  .Grade {
+    font-size: 18px;
+  }
+}
+@media (max-width: 850px) {
+  .rowTitle,
+  .Grade {
+    font-size: 16px;
+  }
+}
+@media (min-width: 577px) {
+  .DPreview {
+    display: none;
+  }
+  .rowTitle,
+  .Grade,
+  .title {
+    margin: 2%;
+  }
+
+  .body {
+    min-height: 60vh;
+    width: 95%;
+  }
+}
+@media (max-width: 576px) {
+  .formContainer {
+    display: none;
+  }
 }

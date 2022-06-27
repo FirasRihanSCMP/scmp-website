@@ -13,21 +13,21 @@ export default function Footer() {
             lg={4}
             className={[stylesFooter.footerCols, stylesFooter.firstCol]}
           >
-            <Col className={stylesFooter.bottomLogo} sm={6}>
+            <Col className={stylesFooter.bottomLogo} sm={12} md={12} lg={6}>
               <img
                 className={stylesFooter.logo}
                 src="../../scmp-logo.svg"
 
                 alt="The Scientific Center For Manufactring And Production"
               /> </Col>
-            <Col sm={6} className={stylesFooter.bottomTitle} >   <p className={stylesFooter.scmpfooter}>SCMP</p></Col>
+            <Col sm={12} md={12} lg={6} className={stylesFooter.bottomTitle} >   <p className={stylesFooter.scmpfooter}>SCMP</p></Col>
 
 
           </Col>
 
           <Col
-            xs={6}
-            sm={4}
+            xs={12}
+            sm={6}
             lg={4}
             className={[stylesFooter.footerCols, stylesFooter.col2]}
           >
@@ -70,7 +70,7 @@ export default function Footer() {
 
           <Col
             xs={6}
-            sm={4}
+            sm={6}
             lg={4}
             className={[stylesFooter.footerCols, stylesFooter.col3]}
           >
@@ -80,7 +80,7 @@ export default function Footer() {
               <p>Next to the Kuwaiti Embassy</p>
               <p>Gardenia Building, 4th Floor</p>
               <br/>
-              <iframe title="SCMP Location" id={stylesFooter.gmap_canvas} src="https://maps.google.com/maps?q=scientific%20center%20for%20manufacturing%20and%20production&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+              <iframe title="SCMP Location" id={stylesFooter.gmap_canvas} src="https://maps.google.com/maps?q=scientific%20center%20for%20manufacturing%20and%20production&t=&z=15&ie=UTF8&iwloc=&output=embed"  scrolling="yes" ></iframe>
 
               {/*    <p>
                 Icons by 

@@ -31,7 +31,7 @@ else{/* console.log(e)  */
 
 
 return(
-  loggedIn ? (
+/*   loggedIn ? ( */
   <div>
   <Row className={stylesadmin.root}> 
     <Uploader/>
@@ -39,10 +39,10 @@ return(
    <ToastContainer/>  
   </Row>
 </div>
-) : (
+)/*  : (
 <Auth handleResult={setResult}/>
 
-))
+)) */
 /*   return <>{props.isLoggedIn ?  <div>
      <Row className={stylesadmin.root}> 
 <Uploader/>

@@ -18,6 +18,7 @@
     "react": "^17.0.2",
     "react-alice-carousel": "^2.6.1",
     "react-bootstrap": "^2.0.1",
+    "react-circle": "^1.1.1",
     "react-circular-progressbar": "^2.0.4",
     "react-datepicker": "^4.5.0",
     "react-dom": "^17.0.2",
@@ -28,6 +29,7 @@
     "react-router-dom": "^6.0.0",
     "react-scroll": "^1.8.4",
     "react-spinners": "^0.11.0",
+    "react-spring": "^9.4.5",
     "react-toastify": "^8.1.0",
     "react-youtube": "^9.0.1",
     "redux": "^4.1.2",
@@ -38,7 +40,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "cross-env GENERATE_SOURCEMAP=false react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -66,7 +68,7 @@
   "devDependencies": {
     "react-scripts": "^5.0.0"
   },
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "description": "Scientific Center For Manufacturing and Production",
   "main": "weboack.config.js",
   "author": "",
   "license": "ISC"
