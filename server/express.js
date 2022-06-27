@@ -96,6 +96,20 @@ app.get("/api/SWS", async (req, res) => {
     return res.send("not found");
   }
 });
+
+app.get("/api/formFS", async (req, res) => {
+  try {
+/* console.log('hello') */
+    const sqlFetch = "SELECT * FROM `FeasibilityStudyForm` ORDER BY 'Step'";
+    await db.query(sqlFetch, async (err, result) => {
+      /* console.log(result) */
+      return res.send(result);
+    });
+  } catch (error) {
+    return res.send("not found");
+  }
+});
+
 app.get("/api/home", async (req, res) => {
   try {
 /* console.log('hello') */
@@ -111,6 +125,7 @@ app.get("/api/home", async (req, res) => {
 
 app.post("/api/AddU_SCMP", async (req, res) => {
   try {
+    console.log(req.body)
     const { U_Name, U_Pass, admin } = req.body;
     const U_NameModified = U_Name.toLowerCase();
     const hash = await bcrypt.hash(U_Pass, 10);
@@ -205,43 +220,6 @@ app.post("/api/EventUpload", multipleUpload, async (req, res, err) => {
 }
 )
 
-/* async function checkCreateUploadsFolder (uploadsFolder) {
-	try {
-		await fs.statAsync(uploadsFolder)
-	} catch (e) {
-   
-		if (e && e.code == 'ENOENT') {
-			console.log('The uploads folder doesn\'t exist, creating a new one...')
-			try {
-				await fs.mkdirAsync(uploadsFolder)
-			} catch (err) {
-				console.log('Error creating the uploads folder 1')
-				return false
-			}
-		} else {
-			console.log('Error creating the uploads folder 2')
-			return false
-		}
-	}
-	return true
-}
- */
-
-
-
-
-/* console.log(req.files)
-form.on('fileBegin', function(name, file){
-  file.filepath= '../client/build/imgs/events'+ file.name
-})
-form.on('file', function (name,file){
-  console.log("Uploaded file"+file.name)
-}) */
-
-
-
-
-
 app.post("/api/Login", async (req, res) => {
   try {
 
@@ -253,7 +231,7 @@ app.post("/api/Login", async (req, res) => {
     await db.query(sqlFetch, [U_NameModified], async (err, result) => { 
       if (err) {
        
-        res.send({ result: "Network Error" }).status(501)
+        res.send({ auth: "Network Error" }).status(501)
       }
       else if (result.length > 0) {
 
@@ -262,24 +240,24 @@ app.post("/api/Login", async (req, res) => {
 
           if (validPass) {
           
-            if (!!result[0].admin) {
+            if (result[0].auth==='normal') {
              /*  const accessToken=createToken(result[0])
               res.cookie("access-token",accessToken,{maxAge:60*60*2*1000}) */
-              res.send({ webmail: false, result: true }).status(201)
+              res.send({ webmail: true, to: "http://207.180.243.8/webmail", auth:result[0].auth }).status(201)
 
             } else {
 
-              res.send({ webmail: true, result: "http://207.180.243.8/webmail" });
+              res.send({ webmail: false, auth: result[0].auth });
             }
 
 
           }
-          else { res.send({ webmail: false, result: false }).status(401) }
+          else { res.send({ webmail: false, auth: false }).status(401) }
           ;
         }
       }
       else if (result.length == 0) {
-        res.send({ webmail: false, result: false }).status(401)
+        res.send({ webmail: false, auth: false }).status(401)
       }
     })
   }
