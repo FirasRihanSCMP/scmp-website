@@ -25,7 +25,7 @@ export default function Auth(props) {
   useEffect(() => {
 setTimeout(() => {
   setShowBanner({ ...ShowBanner, show: "", value: "" });
-}, 100000);
+}, 3000);
 
   }, [ShowBanner.show])
   

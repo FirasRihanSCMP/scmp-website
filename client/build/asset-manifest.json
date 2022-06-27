@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.5cd43143.css",
-    "main.js": "/static/js/main.c3761b46.js",
+    "main.js": "/static/js/main.be98038c.js",
     "static/media/coolvetica rg.ttf": "/static/media/coolvetica rg.42f59941755a61fca2d0.ttf",
     "static/media/Almarai.ttf": "/static/media/Almarai.4a38a9e69dc7c363301e.ttf",
     "static/media/GOTHIC.TTF": "/static/media/GOTHIC.b194aa2bd524e2c973f7.TTF",
@@ -14,6 +14,6 @@
   },
   "entrypoints": [
     "static/css/main.5cd43143.css",
-    "static/js/main.c3761b46.js"
+    "static/js/main.be98038c.js"
   ]
 }
