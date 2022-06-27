@@ -25,8 +25,7 @@ export default function Auth(props) {
   useEffect(() => {
 setTimeout(() => {
   setShowBanner({ ...ShowBanner, show: "", value: "" });
-  console.log('hi')
-}, 3000);
+}, 100000);
 
   }, [ShowBanner.show])
   
@@ -63,7 +62,7 @@ setTimeout(() => {
           ""
         
       )}
-      {res.auth === false ? <div className={stylesAuth.formDiv}> {console.log(res)} <h1 className={stylesAuth.authTitle}>Staff Verification</h1>
+      {res.auth === false ? <div className={stylesAuth.formDiv}> <h1 className={stylesAuth.authTitle}>Staff Verification</h1>
         <Form className={stylesAuth.bodyWidth} onSubmit={Handlelogin}>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Email Username</Form.Label>

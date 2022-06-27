@@ -23,6 +23,8 @@
     position: absolute;
     right: 0;
     left: 0;
+    bottom: 0;
+    top: 0;
     background: rgba(100, 100, 100, 0.308);
    z-index: 1;
     height: 50vh;
@@ -34,10 +36,7 @@
     background: rgba(0, 0, 0, 0.911);
     color: blanchedalmond;
     width: fit-content;
-    padding:10%;
-    position: absolute;
-    right: 0;
-    left: 0;
+    padding:10%;   
     bottom: 35%;
     margin: auto;
     /* background: rgb(41, 41, 41); */
